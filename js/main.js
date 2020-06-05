@@ -3,7 +3,7 @@
 {
     let stickyNav = document.querySelector('.sticky-nav');
 
-    if (window.scrollY > 120) {
+    if (window.scrollY > 90) {
         stickyNav.classList.add('offset');
     }
     
@@ -13,7 +13,7 @@
         function callbackFunc() {
             let y = window.pageYOffset;
 
-            if (y > 120) {
+            if (y > 90) {
                 stickyNav.classList.add('scroll');
                 stickyNav.style.transition = '0.5s';
             } else {
