@@ -27,3 +27,24 @@
         onScroll();
     }
 }
+
+{
+    const menuOpen = document.querySelector('.sticky-nav .menu-open');
+    const menuClose = document.querySelector('.off-canvas .menu-close');
+    const offCanvasWrapper = document.querySelector('.off-canvas-wrapper');
+    const pageWrapper = document.querySelector('.page-wrapper');
+
+    function toggleMenu() {
+        menuOpen.addEventListener('click', () => {
+            offCanvasWrapper.classList.add('is-opened');
+            pageWrapper.classList.add('is-moved');
+        });
+
+        menuClose.addEventListener('click', () => {
+            offCanvasWrapper.classList.remove('is-opened');
+            pageWrapper.classList.remove('is-moved');
+        });
+    }
+
+    toggleMenu();
+}
