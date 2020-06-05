@@ -48,6 +48,7 @@
         justify-content: flex-start;
         transition: transform .7s;
         width: 100%;
+        z-index: 200;
     }
 
     .page-wrapper.is-moved {
@@ -75,7 +76,7 @@
         left: 0;
         bottom: 0;
         width: 350px;
-        padding: 30px;
+        padding: 25px 30px;
         transform: translateX(-350px);
         transition: transform .7s;
         background: #1e1f26;
@@ -115,6 +116,7 @@
 
     .off-canvas-wrapper.is-opened {
         transform: translateX(0);
+        z-index: 250;
 
         .menu .item {
             opacity: 1;
@@ -439,4 +441,24 @@
             }
         }
     }
+}
+
+@media only screen and (max-width: 768px) {
+    .off-canvas {
+        .off-canvas-wrapper {
+            width: 400px;
+            transform: translateX(-400px);
+            padding: 30px 35px;
+        }
+    }
+
+    .page {
+        .page-wrapper.is-moved {
+            transform: translateX(400px);
+        }
+    }
+}
+
+@media only screen and (max-width: 450px) {
+   
 }
