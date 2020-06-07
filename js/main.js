@@ -1,5 +1,29 @@
 'use strict';
 
+/* Silders */
+
+$(document).ready(function(){
+    $('.slider').slick({
+        arrows: false,
+        dots: true,
+        dotsClass: 'my-dots',
+    });
+});
+
+$(document).ready(function(){
+    $('.features-slider').slick({
+        arrows: true,
+        dots: true,
+        dotsClass: 'my-dots',
+        responsive: [{
+            breakpoint: 800,
+        }],
+    })
+})
+
+
+/* Sticky top navigation */
+
 {
     let stickyNav = document.querySelector('.sticky-nav');
 
@@ -28,6 +52,8 @@
     }
 }
 
+
+/* Off-canvas menu */
 {
     const menuOpen = document.querySelector('.sticky-nav .menu-open');
     const menuClose = document.querySelector('.off-canvas .menu-close');
@@ -47,4 +73,28 @@
     }
 
     toggleMenu();
+
+
+    if (window.matchMedia("(min-width: 480px) and (max-width: 1000px)").matches) {
+
+        jQuery('.main-content').swipe({
+            swipeStatus: function(event, phase, direction, distance, duration, fingerCount, fingerData, currentDirection) {
+
+                if (phase == 'end') {
+                    //Swipe in threshold px
+                    if (direction == 'right') {
+                        offCanvasWrapper.classList.add('is-opened');
+                        pageWrapper.classList.add('is-moved');
+                    }
+
+                    if (direction == 'left') {
+                        offCanvasWrapper.classList.remove('is-opened');
+                        pageWrapper.classList.remove('is-moved');
+                    }
+                }
+            },
+            triggerOnTouchEnd: false,
+            threshold: 120 // swipe in 30px
+        });
+    }
 }

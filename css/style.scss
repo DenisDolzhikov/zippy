@@ -284,6 +284,7 @@
             padding-top: 90px;
             padding-bottom: 58px;
             border-bottom: 2px solid #e7e7e7;
+            background: url("../img/about-umbrella-icon.svg") 100% 185px/189px no-repeat;
 
             .section-title {
                 margin-bottom: 84px;
@@ -306,6 +307,37 @@
                     padding-top: 113px;
                     text-align: center;
 
+                    &:nth-child(2) {
+                        margin: 0 auto;
+                    }
+    
+                    &::before {
+                        content: "";
+                        position: absolute;
+                        display: block;
+                        top: 0;
+                        left: 50%;
+                        transform: translateX(-50%);
+                        width: 80px;
+                        height: 80px;
+                        border-radius: 50%;
+                    }
+    
+                    &:first-child::before {
+                        background: #62497c url("../img/icon1.svg") center/35px 40px no-repeat;
+                        z-index: 1000;
+                    }
+    
+                    &:nth-child(2)::before {
+                        background: #62497c url("../img/icon2.svg") center/35px 40px no-repeat;
+                        z-index: 1000;
+                    }
+    
+                    &:last-child::before {
+                        background: #62497c url("../img/icon3.svg") center/35px 40px no-repeat;
+                        z-index: 1000;
+                    }
+
                     .title {
                         margin-bottom: 28px;
                         font: 700 1.474rem 'Montserrat', sans-serif;
@@ -324,39 +356,10 @@
                     }
 
                 }
+            }
 
-                .item:nth-child(2) {
-                    margin: 0 auto;
-                }
-
-                .item::before {
-                    content: "";
-                    position: absolute;
-                    display: block;
-                    top: 0;
-                    left: 50%;
-                    transform: translateX(-50%);
-                    width: 80px;
-                    height: 80px;
-                    border-radius: 50%;
-                }
-
-                .item:first-child::before {
-                    background: #62497c url("../img/icon1.svg") center/35px 40px no-repeat;
-                    z-index: 1000;
-                }
-
-                .item:nth-child(2)::before {
-                    background: #62497c url("../img/icon2.svg") center/35px 40px no-repeat;
-                    z-index: 1000;
-                }
-
-                .item:last-child::before {
-                    background: #62497c url("../img/icon3.svg") center/35px 40px no-repeat;
-                    z-index: 1000;
-                }
-
-                
+            .features-slider {
+                display: none;
             }
         }
     }
@@ -433,10 +436,140 @@
         .about {
             .layout-centered {
                 align-items: center;
+                background-image: none;
 
                 .section-title,
                 .description {
                     text-align: center;
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 800px) {
+    .main-content {
+        .about {
+            .layout-centered {
+
+                .features-list {
+                    display: none;
+                }
+
+                .features-slider {
+                    display: flex;
+                    position: relative;
+                    margin-bottom: 0 !important;
+
+                    .slide {
+                        display: flex;
+                        width: 100%;
+                        position: relative;
+
+                        .item {
+                            display: flex;
+                            position: relative;
+                            flex-direction: column;
+                            flex-basis: 164px;
+                            padding-top: 113px;
+                            text-align: center;
+                            margin: 0 auto;
+        
+                            .title {
+                                margin-bottom: 28px;
+                                font: 700 1.474rem 'Montserrat', sans-serif;
+                                text-transform: uppercase;
+                                color: #62497c;
+                            }
+        
+                            .description {
+                                margin-bottom: 38px;
+                                font: 400 1.326rem/2.358rem 'Helvetica';
+                                color: #818181;
+                            }
+        
+                            .button {
+                                align-self: center;
+                            }
+                        }
+
+                        .item::before {
+                            content: "";
+                            position: absolute;
+                            display: block;
+                            top: 0;
+                            left: 50%;
+                            transform: translateX(-50%);
+                            width: 80px;
+                            height: 80px;
+                            border-radius: 50%;
+                            background: #62497c
+                        }
+                    }
+
+                    .my-dots {
+                        position: absolute;
+                        display: flex;
+                        justify-content: center;
+                        bottom: -50px;
+                        width: 100%;
+                        padding: 0;
+                        text-align: center;
+            
+                        li {
+                            position: relative;
+                            display: flex;
+                            width: 8px;
+                            height: 8px;
+                            margin-right: 8px;
+                            padding: 0;
+                            cursor: pointer;
+            
+                            button {
+                                font-size: 0;
+                                line-height: 0;
+                                display: block;
+                                width: 8px;
+                                height: 8px;
+                                padding: 5px;
+                                cursor: pointer;
+                                color: transparent;
+                                border: 0;
+                                outline: none;
+                                background: #a99a9e;
+                                border-radius: 50%;
+                            }
+                        }
+            
+                        li.slick-active button {
+                            background: black;
+                        }
+                    }
+
+                    .slick-arrow {
+                        position: absolute;
+                        display: flex;
+                        background: gray;
+                        width: 30px;
+                        height: 30px;
+                        z-index: 50;
+                        font-size: 0;
+                        background: url('../img/arrow.svg') 0 0/100% no-repeat;
+                    }
+
+                    .slick-prev::before,
+                    .slick-next::before {
+                        display: none;
+                    }
+
+                    .slick-prev {
+                        left: -10px;
+                        transform: rotate(180deg);
+                    }
+
+                    .slick-next {
+                        right: -10px;
+                    }
                 }
             }
         }
@@ -459,6 +592,21 @@
     }
 }
 
-@media only screen and (max-width: 450px) {
-   
+@media only screen and (max-width: 600px) {
+    .sticky-nav {
+        .layout-centered {
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .off-canvas {
+        display: none;
+    }
+
+   .sticky-nav {
+       display: none;
+   }
 }
