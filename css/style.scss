@@ -48,7 +48,7 @@
         justify-content: flex-start;
         transition: transform .7s;
         width: 100%;
-        z-index: 200;
+        //z-index: 200;
     }
 
     .page-wrapper.is-moved {
@@ -116,7 +116,7 @@
 
     .off-canvas-wrapper.is-opened {
         transform: translateX(0);
-        z-index: 250;
+        z-index: 10000;
 
         .menu .item {
             opacity: 1;
@@ -183,21 +183,20 @@
 }
 
 .header {
-    overflow: hidden;
+    //overflow: hidden;
     color: #ffffff;
-    
-    .slider {
-        display: flex;
-        margin-bottom: 0 !important;
 
-        .slide {
+    .header-slider {
+        display: flex;
+        position: relative;
+
+        .swiper-slide {
             display: flex;
             width: 100%;
             padding-top: 192px;
 
             .layout-centered {
                 flex-direction: column;
-                position: relative;
 
                 .title {
                     margin-bottom: 42px;
@@ -219,60 +218,33 @@
         .slide1 {
             background: url('../img/header-slide1-1200w.jpg') 0 5%/100% 2058px no-repeat;
         }
-
+    
         .slide2 {
             background: url('../img/header-slide2-2134w.jpg') 0 65%/100% no-repeat;
         }
-
+    
         .slide3 {
             background: url('../img/header-slide3-1934w.jpg') 0 80%/100% no-repeat;
         }
-
+    
         .slide4 {
             background: url('../img/header-slide4-1952w.jpg') 0 0/100% no-repeat;
         }
 
-        .my-dots {
+        .swiper-pagination {
             position: absolute;
-            display: flex;
-            justify-content: center;
-            bottom: 40px;
-            width: 100%;
-            padding: 0;
-            text-align: center;
+            bottom: 37px;
             transform: translateX(-310px);
 
-            li {
-                position: relative;
-                display: flex;
-                width: 8px;
-                height: 8px;
-                margin-right: 8px;
-                padding: 0;
-                cursor: pointer;
-
-                button {
-                    font-size: 0;
-                    line-height: 0;
-                    display: block;
-                    width: 8px;
-                    height: 8px;
-                    padding: 5px;
-                    cursor: pointer;
-                    color: transparent;
-                    border: 0;
-                    outline: none;
-                    background: #a99a9e;
-                    border-radius: 50%;
-                }
+            .swiper-pagination-bullet {
+                background: #a99a9e;
             }
 
-            li.slick-active button {
+            .swiper-pagination-bullet-active {
                 background: #ffffff;
             }
-
         }
-    }
+    }   
 }
 
 .main-content {
@@ -358,7 +330,7 @@
                 }
             }
 
-            .features-slider {
+            .about-slider {
                 display: none;
             }
         }
@@ -392,16 +364,17 @@
     }
 
     .header {
-        .slider {
-            .my-dots {
-                transform: none;
-            }
+        .header-slider {
 
             .slide1,
             .slide2,
             .slide3,
             .slide4 {
                 background-size: cover;
+            }
+
+            .swiper-pagination {
+                transform: none;
             }
         }
     }
@@ -413,8 +386,8 @@
     }
 
     .header {
-        .slider {
-            .slide {
+        .header-slider {
+            .swiper-slide {
 
                 .layout-centered {
                     align-items: center;
@@ -456,119 +429,70 @@
                     display: none;
                 }
 
-                .features-slider {
+                .about-slider {
                     display: flex;
+                    width: 100%;
                     position: relative;
-                    margin-bottom: 0 !important;
 
-                    .slide {
+                    .swiper-slide {
                         display: flex;
                         width: 100%;
-                        position: relative;
+                        //background: gray;
 
-                        .item {
-                            display: flex;
-                            position: relative;
-                            flex-direction: column;
-                            flex-basis: 164px;
-                            padding-top: 113px;
-                            text-align: center;
-                            margin: 0 auto;
-        
-                            .title {
-                                margin-bottom: 28px;
-                                font: 700 1.474rem 'Montserrat', sans-serif;
-                                text-transform: uppercase;
-                                color: #62497c;
-                            }
-        
-                            .description {
-                                margin-bottom: 38px;
-                                font: 400 1.326rem/2.358rem 'Helvetica';
-                                color: #818181;
-                            }
-        
-                            .button {
-                                align-self: center;
-                            }
-                        }
+                        .layout-centered {
+                            
+                            .card {
+                                display: flex;
+                                position: relative;
+                                flex-direction: column;
+                                width: 164px;
+                                padding-top: 113px;
+                                text-align: center;
+                                margin: 0 auto;
 
-                        .item::before {
-                            content: "";
-                            position: absolute;
-                            display: block;
-                            top: 0;
-                            left: 50%;
-                            transform: translateX(-50%);
-                            width: 80px;
-                            height: 80px;
-                            border-radius: 50%;
-                            background: #62497c
-                        }
-                    }
-
-                    .my-dots {
-                        position: absolute;
-                        display: flex;
-                        justify-content: center;
-                        bottom: -50px;
-                        width: 100%;
-                        padding: 0;
-                        text-align: center;
+                                &::before {
+                                    content: "";
+                                    position: absolute;
+                                    display: block;
+                                    top: 0;
+                                    left: 50%;
+                                    transform: translateX(-50%);
+                                    width: 80px;
+                                    height: 80px;
+                                    border-radius: 50%;
+                                    background: #62497c
+                                }
             
-                        li {
-                            position: relative;
-                            display: flex;
-                            width: 8px;
-                            height: 8px;
-                            margin-right: 8px;
-                            padding: 0;
-                            cursor: pointer;
+                                .title {
+                                    margin-bottom: 28px;
+                                    font: 700 1.474rem 'Montserrat', sans-serif;
+                                    text-transform: uppercase;
+                                    color: #62497c;
+                                }
             
-                            button {
-                                font-size: 0;
-                                line-height: 0;
-                                display: block;
-                                width: 8px;
-                                height: 8px;
-                                padding: 5px;
-                                cursor: pointer;
-                                color: transparent;
-                                border: 0;
-                                outline: none;
-                                background: #a99a9e;
-                                border-radius: 50%;
+                                .description {
+                                    margin-bottom: 38px;
+                                    font: 400 1.326rem/2.358rem 'Helvetica';
+                                    color: #818181;
+                                }
+            
+                                .button {
+                                    align-self: center;
+                                }
+                            }
+
+                            .card.card1::before {
+                                background: #62497c url("../img/icon1.svg") center/35px 40px no-repeat;
+                            }
+                            
+                            .card.card2::before {
+                                background: #62497c url("../img/icon2.svg") center/35px 40px no-repeat;
+                            }
+
+                            .card.card3::before {
+                                background: #62497c url("../img/icon3.svg") center/35px 40px no-repeat;
                             }
                         }
-            
-                        li.slick-active button {
-                            background: black;
-                        }
-                    }
-
-                    .slick-arrow {
-                        position: absolute;
-                        display: flex;
-                        background: gray;
-                        width: 30px;
-                        height: 30px;
-                        z-index: 50;
-                        font-size: 0;
-                        background: url('../img/arrow.svg') 0 0/100% no-repeat;
-                    }
-
-                    .slick-prev::before,
-                    .slick-next::before {
-                        display: none;
-                    }
-
-                    .slick-prev {
-                        left: -10px;
-                        transform: rotate(180deg);
-                    }
-
-                    .slick-next {
-                        right: -10px;
                     }
                 }
             }

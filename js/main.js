@@ -2,24 +2,28 @@
 
 /* Silders */
 
-$(document).ready(function(){
-    $('.slider').slick({
-        arrows: false,
-        dots: true,
-        dotsClass: 'my-dots',
-    });
+let headerSlider = new Swiper('.header-slider', {
+    loop: true,
+    
+    pagination: {
+        el: '.header-slider .swiper-pagination',
+        clickable: true,
+    },
+    // Enable debugger
+    debugger: true,
 });
 
-$(document).ready(function(){
-    $('.features-slider').slick({
-        arrows: true,
-        dots: true,
-        dotsClass: 'my-dots',
-        responsive: [{
-            breakpoint: 800,
-        }],
-    })
-})
+let aboutSlider = new Swiper('.about-slider', {
+    loop: true,
+    
+    pagination: {
+        el: '.about .swiper-pagination',
+        clickable: true,
+    },
+    // Enable debugger
+    debugger: true,
+});
+
 
 
 /* Sticky top navigation */
@@ -74,10 +78,10 @@ $(document).ready(function(){
 
     toggleMenu();
 
-
+    //Swipe for off canvas
     if (window.matchMedia("(min-width: 480px) and (max-width: 1000px)").matches) {
 
-        jQuery('.main-content').swipe({
+        jQuery('.page-wrapper').swipe({
             swipeStatus: function(event, phase, direction, distance, duration, fingerCount, fingerData, currentDirection) {
 
                 if (phase == 'end') {
