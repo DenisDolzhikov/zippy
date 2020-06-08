@@ -1741,6 +1741,21 @@
   display: none;
 }
 
+.main-content .projects .projects-list .project {
+  background: #efefef;
+}
+
+.main-content .projects .projects-list .project .container .title {
+  font: 700 1.474rem 'Montserrat', sans-serif;
+  text-transform: uppercase;
+  color: #040405;
+}
+
+.main-content .projects .projects-list .project .container .description {
+  font: 400 1.326rem/2.358rem 'Helvetica';
+  color: #818182;
+}
+
 @media only screen and (max-width: 1000px) {
   .sticky-nav {
     padding-top: 25px;
@@ -1946,6 +1961,12 @@
 @media only screen and (max-width: 375px) {
   :root {
     font-size: 10px;
+  }
+}
+
+@media only screen and (max-width: 320px) {
+  :root {
+    font-size: 9px;
   }
 }
 /*# sourceMappingURL=style.css.map */

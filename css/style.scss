@@ -340,6 +340,27 @@
             }
         }
     }
+
+    .projects {
+        .projects-list {
+            .project {
+                background: #efefef;
+                
+                .container {
+                    .title {
+                        font: 700 1.474rem 'Montserrat', sans-serif;
+                        text-transform: uppercase;
+                        color: #040405;
+                    }
+
+                    .description {
+                        font: 400 1.326rem/2.358rem 'Helvetica';
+                        color: #818182;
+                    }
+                }
+            }
+        }
+    }
 }
 
 @media only screen and (max-width: 1000px) {
@@ -603,4 +624,9 @@
     }
 }
 
+@media only screen and (max-width: 320px) {
+    :root {
+        font-size: 9px;
+    }
+}
 
