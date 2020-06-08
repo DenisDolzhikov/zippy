@@ -400,8 +400,7 @@
             .swiper-slide {
 
                 .layout-centered {
-                    align-items: center;
-
+                    
                     .title,
                     .description {
                         text-align: center;
@@ -575,4 +574,27 @@
    .sticky-nav {
        display: none;
    }
+
+   .header {
+        .header-slider {
+            .swiper-slide {
+                height: 100vh;
+                padding-top: 0;
+
+                .layout-centered {
+                    flex-direction: column;
+ 
+                    .button {
+                        margin-bottom: 0;
+                    }
+                }
+            }
+
+            .swiper-pagination {
+                bottom: 20px;
+            }
+       }
+   }
 }
+
+

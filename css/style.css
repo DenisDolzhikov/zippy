@@ -1788,11 +1788,6 @@
   :root {
     font-size: 12px;
   }
-  .header .header-slider .swiper-slide .layout-centered {
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-  }
   .header .header-slider .swiper-slide .layout-centered .title,
   .header .header-slider .swiper-slide .layout-centered .description {
     text-align: center;
@@ -1929,6 +1924,22 @@
   }
   .sticky-nav {
     display: none;
+  }
+  .header .header-slider .swiper-slide {
+    height: 100vh;
+    padding-top: 0;
+  }
+  .header .header-slider .swiper-slide .layout-centered {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .header .header-slider .swiper-slide .layout-centered .button {
+    margin-bottom: 0;
+  }
+  .header .header-slider .swiper-pagination {
+    bottom: 20px;
   }
 }
 /*# sourceMappingURL=style.css.map */
