@@ -14,7 +14,7 @@
     display: flex;
     width: 708px;
     padding: 0 8px;
-    margin: 0 auto;
+    margin: auto;
 }
 
 .button {
@@ -201,11 +201,13 @@
                 .title {
                     margin-bottom: 42px;
                     font: 700 4.069rem 'Montserrat', sans-serif;
+                    white-space: pre-line;
                 }
 
                 .description {
                     margin-bottom: 35px;
                     font: 100 1.916rem 'Roboto', sans-serif;
+                    white-space: pre-line;
                 }
 
                 .button {
@@ -248,11 +250,11 @@
 }
 
 .main-content {
-    .about {
-        display: flex;
 
+    .about {
         .layout-centered {
             flex-direction: column;
+            //align-items: center;
             padding-top: 90px;
             padding-bottom: 58px;
             border-bottom: 2px solid #e7e7e7;
@@ -260,11 +262,14 @@
 
             .section-title {
                 margin-bottom: 84px;
+                width: 100%;
             }
 
             > .description {
-                font: 100 2.947rem 'Roboto', sans-serif;
+                width: 100%;
                 margin-bottom: 76px;
+                font: 100 2.947rem 'Roboto', sans-serif;
+                white-space: pre-line;
             }
 
             .features-list {
@@ -371,6 +376,11 @@
             .slide3,
             .slide4 {
                 background-size: cover;
+
+                .layout-centered {
+                    padding-left: 20px;
+                    padding-right: 20px;
+                }
             }
 
             .swiper-pagination {
@@ -408,7 +418,6 @@
     .main-content {
         .about {
             .layout-centered {
-                align-items: center;
                 background-image: none;
 
                 .section-title,
@@ -438,61 +447,60 @@
                         display: flex;
                         width: 100%;
                         //background: gray;
-
-                        .layout-centered {
                             
-                            .card {
-                                display: flex;
-                                position: relative;
-                                flex-direction: column;
-                                width: 164px;
-                                padding-top: 113px;
-                                text-align: center;
-                                margin: 0 auto;
-
+                        .card {
+                            display: flex;
+                            position: relative;
+                            flex-direction: column;
+                            width: 164px;
+                            padding-top: 113px;
+                            text-align: center;
+                            margin: 0 auto;
                                 &::before {
-                                    content: "";
-                                    position: absolute;
-                                    display: block;
-                                    top: 0;
-                                    left: 50%;
-                                    transform: translateX(-50%);
-                                    width: 80px;
-                                    height: 80px;
-                                    border-radius: 50%;
-                                    background: #62497c
-                                }
-            
+                                content: "";
+                                position: absolute;
+                                display: block;
+                                top: 0;
+                                left: 50%;
+                                transform: translateX(-50%);
+                                width: 80px;
+                                height: 80px;
+                                border-radius: 50%;
+                                background: #62497c
+                            }
+        
                                 .title {
-                                    margin-bottom: 28px;
-                                    font: 700 1.474rem 'Montserrat', sans-serif;
-                                    text-transform: uppercase;
-                                    color: #62497c;
-                                }
-            
+                                margin-bottom: 28px;
+                                font: 700 1.474rem 'Montserrat', sans-serif;
+                                text-transform: uppercase;
+                                color: #62497c;
+                            }
+        
                                 .description {
-                                    margin-bottom: 38px;
-                                    font: 400 1.326rem/2.358rem 'Helvetica';
-                                    color: #818181;
-                                }
-            
+                                margin-bottom: 38px;
+                                font: 400 1.326rem/2.358rem 'Helvetica';
+                                color: #818181;
+                            }
+        
                                 .button {
-                                    align-self: center;
-                                }
-                            }
-
-                            .card.card1::before {
-                                background: #62497c url("../img/icon1.svg") center/35px 40px no-repeat;
-                            }
-                            
-                            .card.card2::before {
-                                background: #62497c url("../img/icon2.svg") center/35px 40px no-repeat;
-                            }
-
-                            .card.card3::before {
-                                background: #62497c url("../img/icon3.svg") center/35px 40px no-repeat;
+                                align-self: center;
                             }
                         }
+                            .card.card1::before {
+                            background: #62497c url("../img/icon1.svg") center/35px 40px no-repeat;
+                        }
+                        
+                         .card.card2::before {
+                            background: #62497c url("../img/icon2.svg") center/35px 40px no-repeat;
+                        }
+                            .card.card3::before {
+                            background: #62497c url("../img/icon3.svg") center/35px 40px no-repeat;
+                        }
+                    }
+
+                    .swiper-pagination {
+                        position: absolute;
+                        bottom: -40px;
                     }
                 }
             }
@@ -512,6 +520,40 @@
     .page {
         .page-wrapper.is-moved {
             transform: translateX(400px);
+        }
+    }
+}
+
+@media only screen and (max-width: 708px) {
+
+    .header {
+        .header-slider {
+            .swiper-slide {
+                .layout-centered {
+
+                    .title {
+                        white-space: normal;
+                    }
+    
+                    .description {
+                        white-space: normal;
+                    }
+                }
+            }
+        }
+    }
+
+    .main-content {
+        .about {
+            .layout-centered {
+                width: auto;
+                padding-left: 20px;
+                padding-right: 20px;
+
+                > .description {
+                    white-space: normal;
+                }
+            }
         }
     }
 }

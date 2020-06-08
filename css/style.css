@@ -1364,7 +1364,7 @@
   display: flex;
   width: 708px;
   padding: 0 8px;
-  margin: 0 auto;
+  margin: auto;
 }
 
 .button {
@@ -1595,11 +1595,13 @@
 .header .header-slider .swiper-slide .layout-centered .title {
   margin-bottom: 42px;
   font: 700 4.069rem 'Montserrat', sans-serif;
+  white-space: pre-line;
 }
 
 .header .header-slider .swiper-slide .layout-centered .description {
   margin-bottom: 35px;
   font: 100 1.916rem 'Roboto', sans-serif;
+  white-space: pre-line;
 }
 
 .header .header-slider .swiper-slide .layout-centered .button {
@@ -1639,12 +1641,6 @@
   background: #ffffff;
 }
 
-.main-content .about {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-}
-
 .main-content .about .layout-centered {
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
@@ -1658,11 +1654,14 @@
 
 .main-content .about .layout-centered .section-title {
   margin-bottom: 84px;
+  width: 100%;
 }
 
 .main-content .about .layout-centered > .description {
-  font: 100 2.947rem 'Roboto', sans-serif;
+  width: 100%;
   margin-bottom: 76px;
+  font: 100 2.947rem 'Roboto', sans-serif;
+  white-space: pre-line;
 }
 
 .main-content .about .layout-centered .features-list {
@@ -1772,6 +1771,13 @@
   .header .header-slider .slide4 {
     background-size: cover;
   }
+  .header .header-slider .slide1 .layout-centered,
+  .header .header-slider .slide2 .layout-centered,
+  .header .header-slider .slide3 .layout-centered,
+  .header .header-slider .slide4 .layout-centered {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
   .header .header-slider .swiper-pagination {
     -webkit-transform: none;
             transform: none;
@@ -1797,9 +1803,6 @@
         align-self: center;
   }
   .main-content .about .layout-centered {
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
     background-image: none;
   }
   .main-content .about .layout-centered .section-title,
@@ -1825,7 +1828,7 @@
     display: flex;
     width: 100%;
   }
-  .main-content .about .layout-centered .about-slider .swiper-slide .layout-centered .card {
+  .main-content .about .layout-centered .about-slider .swiper-slide .card {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -1839,7 +1842,7 @@
     text-align: center;
     margin: 0 auto;
   }
-  .main-content .about .layout-centered .about-slider .swiper-slide .layout-centered .card::before {
+  .main-content .about .layout-centered .about-slider .swiper-slide .card::before {
     content: "";
     position: absolute;
     display: block;
@@ -1852,30 +1855,34 @@
     border-radius: 50%;
     background: #62497c;
   }
-  .main-content .about .layout-centered .about-slider .swiper-slide .layout-centered .card .title {
+  .main-content .about .layout-centered .about-slider .swiper-slide .card .title {
     margin-bottom: 28px;
     font: 700 1.474rem 'Montserrat', sans-serif;
     text-transform: uppercase;
     color: #62497c;
   }
-  .main-content .about .layout-centered .about-slider .swiper-slide .layout-centered .card .description {
+  .main-content .about .layout-centered .about-slider .swiper-slide .card .description {
     margin-bottom: 38px;
     font: 400 1.326rem/2.358rem 'Helvetica';
     color: #818181;
   }
-  .main-content .about .layout-centered .about-slider .swiper-slide .layout-centered .card .button {
+  .main-content .about .layout-centered .about-slider .swiper-slide .card .button {
     -ms-flex-item-align: center;
         -ms-grid-row-align: center;
         align-self: center;
   }
-  .main-content .about .layout-centered .about-slider .swiper-slide .layout-centered .card.card1::before {
+  .main-content .about .layout-centered .about-slider .swiper-slide .card.card1::before {
     background: #62497c url("../img/icon1.svg") center/35px 40px no-repeat;
   }
-  .main-content .about .layout-centered .about-slider .swiper-slide .layout-centered .card.card2::before {
+  .main-content .about .layout-centered .about-slider .swiper-slide .card.card2::before {
     background: #62497c url("../img/icon2.svg") center/35px 40px no-repeat;
   }
-  .main-content .about .layout-centered .about-slider .swiper-slide .layout-centered .card.card3::before {
+  .main-content .about .layout-centered .about-slider .swiper-slide .card.card3::before {
     background: #62497c url("../img/icon3.svg") center/35px 40px no-repeat;
+  }
+  .main-content .about .layout-centered .about-slider .swiper-pagination {
+    position: absolute;
+    bottom: -40px;
   }
 }
 
@@ -1889,6 +1896,23 @@
   .page .page-wrapper.is-moved {
     -webkit-transform: translateX(400px);
             transform: translateX(400px);
+  }
+}
+
+@media only screen and (max-width: 708px) {
+  .header .header-slider .swiper-slide .layout-centered .title {
+    white-space: normal;
+  }
+  .header .header-slider .swiper-slide .layout-centered .description {
+    white-space: normal;
+  }
+  .main-content .about .layout-centered {
+    width: auto;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  .main-content .about .layout-centered > .description {
+    white-space: normal;
   }
 }
 
