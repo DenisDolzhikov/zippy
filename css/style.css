@@ -1926,7 +1926,7 @@
     display: none;
   }
   .header .header-slider .swiper-slide {
-    height: 100vh;
+    height: 90vh;
     padding-top: 0;
   }
   .header .header-slider .swiper-slide .layout-centered {
@@ -1940,6 +1940,12 @@
   }
   .header .header-slider .swiper-pagination {
     bottom: 20px;
+  }
+}
+
+@media only screen and (max-width: 375px) {
+  :root {
+    font-size: 10px;
   }
 }
 /*# sourceMappingURL=style.css.map */

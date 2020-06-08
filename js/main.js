@@ -79,7 +79,7 @@ let aboutSlider = new Swiper('.about-slider', {
     toggleMenu();
 
     //Swipe for off canvas
-    if (window.matchMedia("(min-width: 300px) and (max-width: 1000px)").matches) {
+    if (window.matchMedia("(min-width: 480px) and (max-width: 1000px)").matches) {
 
         jQuery('.page-wrapper').swipe({
             swipeStatus: function(event, phase, direction, distance, duration, fingerCount, fingerData, currentDirection) {
