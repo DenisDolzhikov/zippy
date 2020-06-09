@@ -342,23 +342,90 @@
     }
 
     .projects {
+        padding-top: 60px;
+        padding-bottom: 45px;
+
+        .section-title {
+            text-align: center;
+            padding: 0 20px;
+            margin-bottom: 47px;
+        }
+
         .projects-list {
+            display: flex;
+
             .project {
+                flex: 1 1 25%;
+                display: flex;
                 background: #efefef;
                 
-                .container {
+                .item {
+                    display: flex;
+                    flex-direction: column;
+                    transition: background .3s;
+                    cursor: pointer;
+
+                    .img-container {
+                        width: 100%;
+                        margin-bottom: 46px;
+                        overflow: hidden;
+
+                        .image {
+                            height: auto;
+                            width: 100%;
+                            transition: 1s;
+
+                            &:hover {
+                                transform: scale(1.1);
+                            }
+                        }
+                    }
+
                     .title {
+                        margin-bottom: 18px;
+                        margin-left: 12.54%;
+                        margin-right: 9.97%;
                         font: 700 1.474rem 'Montserrat', sans-serif;
                         text-transform: uppercase;
                         color: #040405;
                     }
 
                     .description {
+                        margin-bottom: 16px;
+                        margin-left: 12.54%;
+                        margin-right: 9.97%;
                         font: 400 1.326rem/2.358rem 'Helvetica';
                         color: #818182;
                     }
+
+                    .button-launch {
+                        align-self: flex-start;
+                        margin-bottom: 46px;
+                        margin-left: 12.54%;
+                        margin-right: 9.97%;
+                        padding: 17px 25px;
+                        font: 700 1.032rem 'Montserrat', sans-serif;
+                        text-transform: uppercase;
+                        background: #fefefe;
+                        border-radius: 3px;
+                        color: #323232;
+                        transition: .3s;
+
+                        &:hover {
+                            background: #62497c;
+                            color: #f0edf2;
+                        }
+                    }
+
+                    &:not(.image):hover {
+                        background: #ffe26d;
+                    }
                 }
             }
+        }
+
+        .projects-slider {
+            display: none;
         }
     }
 }
@@ -406,6 +473,91 @@
 
             .swiper-pagination {
                 transform: none;
+            }
+        }
+    }
+
+    .main-content {
+        .projects {
+
+            .projects-list {
+                display: none;
+            }
+
+            .projects-slider {
+                display: flex;
+                position: relative;
+                background: #efefef;
+
+                .swiper-slide {
+                    .item {
+                        display: flex;
+                        flex-direction: column;
+                        transition: background .3s;
+                        cursor: pointer;
+    
+                        .img-container {
+                            width: 100%;
+                            margin-bottom: 46px;
+                            overflow: hidden;
+    
+                            .image {
+                                height: auto;
+                                width: 100%;
+                                transition: 1s;
+    
+                                &:hover {
+                                    transform: scale(1.1);
+                                }
+                            }
+                        }
+    
+                        .title {
+                            margin-bottom: 18px;
+                            margin-left: 12.54%;
+                            margin-right: 9.97%;
+                            font: 700 1.474rem 'Montserrat', sans-serif;
+                            text-transform: uppercase;
+                            color: #040405;
+                        }
+    
+                        .description {
+                            margin-bottom: 16px;
+                            margin-left: 12.54%;
+                            margin-right: 9.97%;
+                            font: 400 1.326rem/2.358rem 'Helvetica';
+                            color: #818182;
+                        }
+    
+                        .button-launch {
+                            align-self: flex-start;
+                            margin-bottom: 46px;
+                            margin-left: 12.54%;
+                            margin-right: 9.97%;
+                            padding: 17px 25px;
+                            font: 700 1.032rem 'Montserrat', sans-serif;
+                            text-transform: uppercase;
+                            background: #fefefe;
+                            border-radius: 3px;
+                            color: #323232;
+                            transition: .3s;
+    
+                            &:hover {
+                                background: #62497c;
+                                color: #f0edf2;
+                            }
+                        }
+    
+                        &:not(.image):hover {
+                            background: #ffe26d;
+                        }
+                    }
+                }
+
+                .swiper-pagination {
+                    position: absolute;
+                    bottom: -20px;
+                }
             }
         }
     }
@@ -525,6 +677,28 @@
                 }
             }
         }
+
+        .projects {
+            .projects-slider {
+                .swiper-slide {
+                    .item {
+                        align-items: center;
+
+                        .title,
+                        .description,
+                        .button-launch {
+                            margin-left: 8%;
+                            margin-right: 8%;
+                            text-align: center;
+                        }
+
+                        .button-launch {
+                            align-self: center;
+                        }
+                    }
+                }
+            }
+        }
     }
 }
 
@@ -542,6 +716,8 @@
             transform: translateX(400px);
         }
     }
+
+    
 }
 
 @media only screen and (max-width: 708px) {
@@ -583,6 +759,20 @@
         .layout-centered {
             padding-left: 20px;
             padding-right: 20px;
+        }
+    }
+
+    .main-content {
+        .projects {
+            .projects-slider {
+                .swiper-slide {
+                    .item {
+                        .img-container {
+                            max-height: 520px;
+                        }
+                    }
+                }
+            }
         }
     }
 }

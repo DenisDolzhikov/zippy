@@ -1741,19 +1741,108 @@
   display: none;
 }
 
+.main-content .projects {
+  padding-top: 60px;
+  padding-bottom: 45px;
+}
+
+.main-content .projects .section-title {
+  text-align: center;
+  padding: 0 20px;
+  margin-bottom: 47px;
+}
+
+.main-content .projects .projects-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
 .main-content .projects .projects-list .project {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 25%;
+          flex: 1 1 25%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   background: #efefef;
 }
 
-.main-content .projects .projects-list .project .container .title {
+.main-content .projects .projects-list .project .item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-transition: background .3s;
+  transition: background .3s;
+  cursor: pointer;
+}
+
+.main-content .projects .projects-list .project .item .img-container {
+  width: 100%;
+  margin-bottom: 46px;
+  overflow: hidden;
+}
+
+.main-content .projects .projects-list .project .item .img-container .image {
+  height: auto;
+  width: 100%;
+  -webkit-transition: 1s;
+  transition: 1s;
+}
+
+.main-content .projects .projects-list .project .item .img-container .image:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+
+.main-content .projects .projects-list .project .item .title {
+  margin-bottom: 18px;
+  margin-left: 12.54%;
+  margin-right: 9.97%;
   font: 700 1.474rem 'Montserrat', sans-serif;
   text-transform: uppercase;
   color: #040405;
 }
 
-.main-content .projects .projects-list .project .container .description {
+.main-content .projects .projects-list .project .item .description {
+  margin-bottom: 16px;
+  margin-left: 12.54%;
+  margin-right: 9.97%;
   font: 400 1.326rem/2.358rem 'Helvetica';
   color: #818182;
+}
+
+.main-content .projects .projects-list .project .item .button-launch {
+  -ms-flex-item-align: start;
+      align-self: flex-start;
+  margin-bottom: 46px;
+  margin-left: 12.54%;
+  margin-right: 9.97%;
+  padding: 17px 25px;
+  font: 700 1.032rem 'Montserrat', sans-serif;
+  text-transform: uppercase;
+  background: #fefefe;
+  border-radius: 3px;
+  color: #323232;
+  -webkit-transition: .3s;
+  transition: .3s;
+}
+
+.main-content .projects .projects-list .project .item .button-launch:hover {
+  background: #62497c;
+  color: #f0edf2;
+}
+
+.main-content .projects .projects-list .project .item:not(.image):hover {
+  background: #ffe26d;
+}
+
+.main-content .projects .projects-slider {
+  display: none;
 }
 
 @media only screen and (max-width: 1000px) {
@@ -1796,6 +1885,84 @@
   .header .header-slider .swiper-pagination {
     -webkit-transform: none;
             transform: none;
+  }
+  .main-content .projects .projects-list {
+    display: none;
+  }
+  .main-content .projects .projects-slider {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    position: relative;
+    background: #efefef;
+  }
+  .main-content .projects .projects-slider .swiper-slide .item {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-transition: background .3s;
+    transition: background .3s;
+    cursor: pointer;
+  }
+  .main-content .projects .projects-slider .swiper-slide .item .img-container {
+    width: 100%;
+    margin-bottom: 46px;
+    overflow: hidden;
+  }
+  .main-content .projects .projects-slider .swiper-slide .item .img-container .image {
+    height: auto;
+    width: 100%;
+    -webkit-transition: 1s;
+    transition: 1s;
+  }
+  .main-content .projects .projects-slider .swiper-slide .item .img-container .image:hover {
+    -webkit-transform: scale(1.1);
+            transform: scale(1.1);
+  }
+  .main-content .projects .projects-slider .swiper-slide .item .title {
+    margin-bottom: 18px;
+    margin-left: 12.54%;
+    margin-right: 9.97%;
+    font: 700 1.474rem 'Montserrat', sans-serif;
+    text-transform: uppercase;
+    color: #040405;
+  }
+  .main-content .projects .projects-slider .swiper-slide .item .description {
+    margin-bottom: 16px;
+    margin-left: 12.54%;
+    margin-right: 9.97%;
+    font: 400 1.326rem/2.358rem 'Helvetica';
+    color: #818182;
+  }
+  .main-content .projects .projects-slider .swiper-slide .item .button-launch {
+    -ms-flex-item-align: start;
+        align-self: flex-start;
+    margin-bottom: 46px;
+    margin-left: 12.54%;
+    margin-right: 9.97%;
+    padding: 17px 25px;
+    font: 700 1.032rem 'Montserrat', sans-serif;
+    text-transform: uppercase;
+    background: #fefefe;
+    border-radius: 3px;
+    color: #323232;
+    -webkit-transition: .3s;
+    transition: .3s;
+  }
+  .main-content .projects .projects-slider .swiper-slide .item .button-launch:hover {
+    background: #62497c;
+    color: #f0edf2;
+  }
+  .main-content .projects .projects-slider .swiper-slide .item:not(.image):hover {
+    background: #ffe26d;
+  }
+  .main-content .projects .projects-slider .swiper-pagination {
+    position: absolute;
+    bottom: -20px;
   }
 }
 
@@ -1894,6 +2061,23 @@
     position: absolute;
     bottom: -40px;
   }
+  .main-content .projects .projects-slider .swiper-slide .item {
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .main-content .projects .projects-slider .swiper-slide .item .title,
+  .main-content .projects .projects-slider .swiper-slide .item .description,
+  .main-content .projects .projects-slider .swiper-slide .item .button-launch {
+    margin-left: 8%;
+    margin-right: 8%;
+    text-align: center;
+  }
+  .main-content .projects .projects-slider .swiper-slide .item .button-launch {
+    -ms-flex-item-align: center;
+        -ms-grid-row-align: center;
+        align-self: center;
+  }
 }
 
 @media only screen and (max-width: 768px) {
@@ -1930,6 +2114,9 @@
   .sticky-nav .layout-centered {
     padding-left: 20px;
     padding-right: 20px;
+  }
+  .main-content .projects .projects-slider .swiper-slide .item .img-container {
+    max-height: 520px;
   }
 }
 

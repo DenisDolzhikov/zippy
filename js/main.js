@@ -9,7 +9,7 @@ let headerSlider = new Swiper('.header-slider', {
         el: '.header-slider .swiper-pagination',
         clickable: true,
     },
-    // Enable debugger
+   
     debugger: true,
 });
 
@@ -20,9 +20,56 @@ let aboutSlider = new Swiper('.about-slider', {
         el: '.about .swiper-pagination',
         clickable: true,
     },
-    // Enable debugger
+
     debugger: true,
 });
+
+function makeProjectsSlider() {
+
+    if (window.matchMedia("(min-width: 800px)").matches) {
+
+        let projectsSlider = new Swiper('.projects-slider', {
+            slidesPerView: 3,
+            spaceBetween: 0,
+            pagination: {
+                el: '.projects .swiper-pagination',
+            },
+
+            debugger: true,
+        });
+
+    } else if (window.matchMedia("(min-width: 600px) and (max-width: 800px)").matches) {
+
+        let projectSlider = new Swiper('.projects-slider', {
+            slidesPerView: 2,
+            slidesPerGroup: 2,
+            spaceBetween: 0,
+            pagination: {
+                el: '.projects .swiper-pagination',
+            },
+        
+            debugger: true,
+        });
+
+    } else if (window.matchMedia("(max-width: 600px)").matches) {
+
+        let projectSlider = new Swiper('.projects-slider', {
+            slidesPerView: 1,
+            slidesPerGroup: 1,
+            pagination: {
+                el: '.projects .swiper-pagination',
+            },
+        
+            debugger: true,
+        });
+    }
+};
+
+makeProjectsSlider();
+
+window.addEventListener('resize', function(event) {
+    makeProjectsSlider();
+})
 
 
 
