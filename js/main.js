@@ -17,60 +17,44 @@ let aboutSlider = new Swiper('.about-slider', {
     loop: true,
     
     pagination: {
-        el: '.about .swiper-pagination',
+        el: '.about-slider .swiper-pagination',
         clickable: true,
     },
 
     debugger: true,
 });
 
-function makeProjectsSlider() {
+let projectsSlider = new Swiper('.projects-slider', {
+    slidesPerView: 1,
+    slidesPerGroup: 1,
 
-    if (window.matchMedia("(min-width: 800px)").matches) {
+    pagination: {
+        el: '.projects-slider .swiper-pagination',
+    },
+    debugger: true,
 
-        let projectsSlider = new Swiper('.projects-slider', {
-            slidesPerView: 3,
-            spaceBetween: 0,
-            pagination: {
-                el: '.projects .swiper-pagination',
-            },
-
-            debugger: true,
-        });
-
-    } else if (window.matchMedia("(min-width: 600px) and (max-width: 800px)").matches) {
-
-        let projectSlider = new Swiper('.projects-slider', {
+    breakpoints: {
+        600: {
             slidesPerView: 2,
             slidesPerGroup: 2,
+        },
+
+        800: {
+            slidesPerView: 3,
             spaceBetween: 0,
-            pagination: {
-                el: '.projects .swiper-pagination',
-            },
-        
-            debugger: true,
-        });
-
-    } else if (window.matchMedia("(max-width: 600px)").matches) {
-
-        let projectSlider = new Swiper('.projects-slider', {
-            slidesPerView: 1,
-            slidesPerGroup: 1,
-            pagination: {
-                el: '.projects .swiper-pagination',
-            },
-        
-            debugger: true,
-        });
+        }
     }
-};
+});
 
-makeProjectsSlider();
+let pricingSlider = new Swiper('.price-slider', {
+    slidesPerView: 1,
+    slidesPerGroup: 1,
 
-window.addEventListener('resize', function(event) {
-    makeProjectsSlider();
-})
-
+    pagination: {
+        el: '.price-slider .swiper-pagination',
+    },
+    debugger: true,
+});
 
 
 /* Sticky top navigation */
@@ -115,37 +99,54 @@ window.addEventListener('resize', function(event) {
         menuOpen.addEventListener('click', () => {
             offCanvasWrapper.classList.add('is-opened');
             pageWrapper.classList.add('is-moved');
+            pageWrapper.classList.add('overlay');
         });
 
         menuClose.addEventListener('click', () => {
             offCanvasWrapper.classList.remove('is-opened');
             pageWrapper.classList.remove('is-moved');
+            pageWrapper.classList.remove('overlay');
         });
     }
 
     toggleMenu();
 
     //Swipe for off canvas
-    if (window.matchMedia("(min-width: 480px) and (max-width: 1000px)").matches) {
+    function offCanvasSwiper() {
+        if (window.matchMedia("(min-width: 480px) and (max-width: 1000px)").matches) {
 
-        jQuery('.page-wrapper').swipe({
-            swipeStatus: function(event, phase, direction, distance, duration, fingerCount, fingerData, currentDirection) {
+            $('.page-wrapper').swipe({
+                swipeStatus: function(event, phase, direction, distance, duration, fingerCount, fingerData, currentDirection) {
 
-                if (phase == 'end') {
-                    //Swipe in threshold px
-                    if (direction == 'right') {
-                        offCanvasWrapper.classList.add('is-opened');
-                        pageWrapper.classList.add('is-moved');
+                    if (phase == 'end') {
+                        //Swipe in threshold px
+                        if (direction == 'right') {
+                            offCanvasWrapper.classList.add('is-opened');
+                            pageWrapper.classList.add('is-moved');
+                            pageWrapper.classList.add('overlay');
+                        }
+
+                        if (direction == 'left') {
+                            offCanvasWrapper.classList.remove('is-opened');
+                            pageWrapper.classList.remove('is-moved');
+                            pageWrapper.classList.remove('overlay');
+                        }
                     }
-
-                    if (direction == 'left') {
-                        offCanvasWrapper.classList.remove('is-opened');
-                        pageWrapper.classList.remove('is-moved');
-                    }
-                }
-            },
-            triggerOnTouchEnd: false,
-            threshold: 120 // swipe in 30px
-        });
+                },
+                triggerOnTouchEnd: false,
+                threshold: 120 // swipe in 30px
+            });
+        }
     }
+
+    offCanvasSwiper();
+
+    window.addEventListener('resize', function(event) {
+        if (!window.matchMedia("(min-width: 480px) and (max-width: 1000px)").matches) {
+            $('.page-wrapper').swipe('destroy');
+        }
+
+        offCanvasSwiper();
+    });
+    
 }

@@ -33,6 +33,7 @@
 }
 
 .section-title {
+    text-align: center;
     font: 700 4.421rem 'Montserrat', sans-serif;
     color: #040405;
 }
@@ -43,12 +44,26 @@
     overflow: hidden;
 
     .page-wrapper {
+        position: relative;
         display: flex;
         flex-direction: column;
         justify-content: flex-start;
-        transition: transform .7s;
+        transition: transform 0.7s,
+            background 0.4s;
         width: 100%;
-        //z-index: 200;
+        z-index: 10;
+    }
+
+    .page-wrapper.overlay::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        z-index: 10000;
+        background: rgba(0,0,0, 0.6);
+        transition: background 0.4s;
     }
 
     .page-wrapper.is-moved {
@@ -69,6 +84,7 @@
 
 .off-canvas {
     overflow: hidden;
+    z-index: 20;
 
     .off-canvas-wrapper {
         position: fixed;
@@ -80,6 +96,7 @@
         transform: translateX(-350px);
         transition: transform .7s;
         background: #1e1f26;
+        z-index: 20;
     }
 
     .menu {
@@ -298,21 +315,19 @@
                         width: 80px;
                         height: 80px;
                         border-radius: 50%;
+                        z-index: 100;
                     }
     
                     &:first-child::before {
                         background: #62497c url("../img/icon1.svg") center/35px 40px no-repeat;
-                        z-index: 1000;
                     }
     
                     &:nth-child(2)::before {
                         background: #62497c url("../img/icon2.svg") center/35px 40px no-repeat;
-                        z-index: 1000;
                     }
     
                     &:last-child::before {
                         background: #62497c url("../img/icon3.svg") center/35px 40px no-repeat;
-                        z-index: 1000;
                     }
 
                     .title {
@@ -365,6 +380,14 @@
                     transition: background .3s;
                     cursor: pointer;
 
+                    &:not(.image):hover {
+                        background: #ffe26d;
+                    }
+
+                    &:hover .img-container > .image {
+                        transform: scale(1.1);
+                    }
+
                     .img-container {
                         width: 100%;
                         margin-bottom: 46px;
@@ -374,10 +397,6 @@
                             height: auto;
                             width: 100%;
                             transition: 1s;
-
-                            &:hover {
-                                transform: scale(1.1);
-                            }
                         }
                     }
 
@@ -416,16 +435,78 @@
                             color: #f0edf2;
                         }
                     }
-
-                    &:not(.image):hover {
-                        background: #ffe26d;
-                    }
                 }
             }
         }
 
         .projects-slider {
             display: none;
+        }
+    }
+
+    .pricing {
+        padding-top: 45px;
+        padding-bottom: 45px;
+        color: #040405;
+
+        .layout-centered {
+            flex-direction: column;
+
+            .section-title {
+                margin-bottom: 48px;
+            }
+
+            .price-list {
+                display: flex;
+                width: 100%;
+                padding-left: 3.21%;
+                padding-right: 3.21%;
+
+                .item {
+                    .card {
+                        display: flex;
+                        flex-direction: column;
+                        text-align: center;
+
+                        .title {
+                            margin-bottom: 23px;
+                            font: 700 1.474rem 'Montserrat', sans-serif;
+                            text-transform: uppercase;
+                        }
+
+                        .price {
+                            margin-bottom: 42px;
+                            font: 400 1.474rem 'Montserrat', sans-serif;
+                            color: #9d9d9d;
+                        }
+
+                        .description-list {
+                            font: 400 1.1rem/2.21rem 'Helvetica';
+
+                            .item {
+                                margin-bottom: 15px;
+                            }
+
+                            .item:last-child {
+                                margin-bottom: 24px;
+                            }
+                        }
+
+                        .button {
+                            padding: 10px 30px;
+                            align-self: center;
+                        }
+                    }
+                }
+
+                .item:nth-child(2) {
+                    margin: 0 auto;
+                }
+            }
+
+            .price-slider {
+                display: none;
+            }
         }
     }
 }
@@ -748,6 +829,76 @@
 
                 > .description {
                     white-space: normal;
+                }
+            }
+        }
+
+        .pricing {
+            padding-top: 45px;
+            padding-bottom: 45px;
+            color: #040405;
+    
+            .layout-centered {
+                width: auto;
+                flex-direction: column;
+    
+                .section-title {
+                    margin-bottom: 48px;
+                }
+    
+                .price-list {
+                    display: none;
+                }
+
+                .price-slider {
+                    display: flex;
+                    position: relative;
+
+                    .swiper-slide {
+                        display: flex;
+                        justify-content: center;
+                        width: 100%;
+
+                        .card {
+                            display: flex;
+                            flex-direction: column;
+                            text-align: center;
+    
+                            .title {
+                                margin-bottom: 23px;
+                                font: 700 1.474rem 'Montserrat', sans-serif;
+                                text-transform: uppercase;
+                            }
+    
+                            .price {
+                                margin-bottom: 42px;
+                                font: 400 1.474rem 'Montserrat', sans-serif;
+                                color: #9d9d9d;
+                            }
+    
+                            .description-list {
+                                font: 400 1.1rem/2.21rem 'Helvetica';
+    
+                                .item {
+                                    margin-bottom: 15px;
+                                }
+    
+                                .item:last-child {
+                                    margin-bottom: 24px;
+                                }
+                            }
+    
+                            .button {
+                                padding: 10px 30px;
+                                align-self: center;
+                            }
+                        }
+                    }
+
+                    .swiper-pagination {
+                        position: absolute;
+                        bottom: -40px;
+                    }
                 }
             }
         }
