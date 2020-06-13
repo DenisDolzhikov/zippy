@@ -56,6 +56,19 @@ let pricingSlider = new Swiper('.price-slider', {
     debugger: true,
 });
 
+let videoSlider = new Swiper('.video-slider', {
+    loop: true,
+    slidesPerView: 'auto',
+    spaceBetween: 36,
+    centeredSlides: true,
+    a11y: true,
+
+    pagination: {
+        el: '.video-slider .swiper-pagination',
+    },
+    debugger: true,
+});
+
 
 /* Sticky top navigation */
 
@@ -150,3 +163,6 @@ let pricingSlider = new Swiper('.price-slider', {
     });
     
 }
+
+// video
+

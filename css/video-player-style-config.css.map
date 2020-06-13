@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,qBAAqB,CAAC;EACrB,gBAAgB,EAAE,iCAAiC;CACnD;;AACD,AAAA,6BAA6B,CAAC;EAC7B,gBAAgB,EAAE,iCAAiC;CACnD;;AACD,AAAA,aAAa,GAAG,MAAM,CAAC;EACtB,gBAAgB,EAAE,iCAAiC;CACnD",
+    "sources": [
+        "video-player-style-config.scss"
+    ],
+    "names": [],
+    "file": "video-player-style-config.css"
+}

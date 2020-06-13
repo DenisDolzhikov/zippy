@@ -446,7 +446,7 @@
 
     .pricing {
         padding-top: 45px;
-        padding-bottom: 45px;
+        padding-bottom: 90px;
         color: #040405;
 
         .layout-centered {
@@ -508,6 +508,55 @@
                 display: none;
             }
         }
+    }
+
+    .videos {
+        padding-top: 86px;
+        padding-bottom: 150px;
+        background: #62497c;
+        color: #fefefe;
+
+        .section-title {
+            margin-bottom: 50px;
+            color: #fefefe;
+        }
+
+        .video-slider {
+            display: flex;
+            position: relative;
+
+            .swiper-slide {
+                display: flex;
+                width: 50%;
+                //background: gray;
+
+                .video {
+                    display: flex;
+                    width: 100%;
+                    height: auto;
+                }
+
+                .play-button {
+                    content: "";
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translateX(-50%) translateY(-50%);
+                    display: flex;
+                    width: 17.14%;
+                    height: auto;
+                    background: none;
+                    outline: none;
+                    border: none;
+                }
+            }
+
+            .swiper-pagination {
+                position: absolute;
+                bottom: -40px;
+            }
+        }
+
     }
 }
 
