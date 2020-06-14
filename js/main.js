@@ -61,7 +61,7 @@ let pricingSlider = new Swiper('.price-slider', {
 let videoSlider = new Swiper('.video-slider', {
     loop: true,
     slidesPerView: 'auto',
-    spaceBetween: 36,
+    spaceBetween: 20,
     centeredSlides: true,
     a11y: true,
 
@@ -69,7 +69,14 @@ let videoSlider = new Swiper('.video-slider', {
         el: '.video-slider .swiper-pagination',
         clickable: true,
     },
+
     debugger: true,
+
+    breakpoints: {
+        480: {
+            spaceBetween: 36,
+        }
+    }
 });
 
 
@@ -175,13 +182,8 @@ let videoSlider = new Swiper('.video-slider', {
     for (let item of video) {
         item.addEventListener('click', () => {
             if (item.paused) {
-                item.play();
                 item.nextElementSibling.getElementsByClassName('play-icon')[0].style.display = 'none';
-                item.nextElementSibling.getElementsByClassName('stop-icon')[0].style.display = 'block';
-            } else {
-                item.pause();
-                item.nextElementSibling.getElementsByClassName('play-icon')[0].style.display = 'flex';
-                item.nextElementSibling.getElementsByClassName('stop-icon')[0].style.display = 'none';
+                item.controls = true;
             }
         });
     }

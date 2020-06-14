@@ -1764,7 +1764,6 @@
 
 .main-content .projects .section-title {
   text-align: center;
-  padding: 0 20px;
   margin-bottom: 47px;
 }
 
@@ -1947,6 +1946,7 @@
 .main-content .videos .section-title {
   margin-bottom: 50px;
   color: #fefefe;
+  padding: 0 20px;
 }
 
 .main-content .videos .video-slider {
@@ -1985,36 +1985,25 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  width: 17.14%;
-  height: auto;
   background: none;
   outline: none;
   border: none;
 }
 
-.main-content .videos .video-slider .swiper-slide .play-button .play-icon,
-.main-content .videos .video-slider .swiper-slide .play-button .stop-icon {
-  font-size: 15rem;
+.main-content .videos .video-slider .swiper-slide .play-button .play-icon {
+  font-size: 120px;
   color: #fefefe;
   -webkit-transition: color .3s;
   transition: color .3s;
 }
 
-.main-content .videos .video-slider .swiper-slide .play-button .stop-icon {
-  display: none;
-  color: #ffe26d;
-  opacity: 0;
-}
-
 .main-content .videos .video-slider .swiper-slide:hover .play-button .icon {
   color: #ffe26d;
-  opacity: 1;
 }
 
-.main-content .videos .video-slider .swiper-slider:hover
-.swiper-pagination {
+.main-content .videos .video-slider .swiper-pagination {
   position: absolute;
-  bottom: -40px;
+  bottom: -60px;
 }
 
 @media only screen and (max-width: 1000px) {
@@ -2134,7 +2123,7 @@
   }
   .main-content .projects .projects-slider .swiper-pagination {
     position: absolute;
-    bottom: -20px;
+    bottom: -40px;
   }
 }
 
@@ -2263,6 +2252,16 @@
     -webkit-transform: translateX(400px);
             transform: translateX(400px);
   }
+  .main-content .videos {
+    padding-top: 60px;
+    padding-bottom: 90px;
+  }
+  .main-content .videos .video-slider .swiper-slide {
+    width: 70%;
+  }
+  .main-content .videos .video-slider .swiper-slide .play-button .play-icon {
+    font-size: 70px;
+  }
 }
 
 @media only screen and (max-width: 708px) {
@@ -2282,7 +2281,7 @@
   }
   .main-content .pricing {
     padding-top: 45px;
-    padding-bottom: 45px;
+    padding-bottom: 65px;
     color: #040405;
   }
   .main-content .pricing .layout-centered {
@@ -2364,6 +2363,18 @@
   }
 }
 
+@media only screen and (max-width: 530px) {
+  .main-content .videos {
+    padding-bottom: 80px;
+  }
+  .main-content .videos .video-slider .swiper-slide {
+    width: 75%;
+  }
+  .main-content .videos .video-slider .swiper-pagination {
+    bottom: -40px;
+  }
+}
+
 @media only screen and (max-width: 480px) {
   .off-canvas {
     display: none;
@@ -2386,6 +2397,12 @@
   }
   .header .header-slider .swiper-pagination {
     bottom: 20px;
+  }
+  .main-content .videos .video-slider .swiper-slide {
+    width: 80%;
+  }
+  .main-content .videos .video-slider .swiper-slide .play-button .play-icon {
+    font-size: 40px;
   }
 }
 
