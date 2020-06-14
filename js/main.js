@@ -177,13 +177,29 @@ let videoSlider = new Swiper('.video-slider', {
 // video
 
 {
-    let video = document.querySelectorAll('.videos .video');
+    let videos = document.querySelectorAll('.videos .video');
+/*
+    function makeVideoDuration() {
+        let slides = document.querySelectorAll('.video-slider .swiper-slide');
 
-    for (let item of video) {
-        item.addEventListener('click', () => {
-            if (item.paused) {
-                item.nextElementSibling.getElementsByClassName('play-icon')[0].style.display = 'none';
-                item.controls = true;
+        for (let slide of slides) {
+            let video = slide.querySelector('.video');
+            let videoDuration = slide.querySelector('.video-duration');
+
+            video.addEventListener('loadedmetadata', () => {
+                videoDuration.textContent = video.duration;
+            });
+        }
+    }
+
+    makeVideoDuration(); */
+
+    for (let video of videos) {
+
+        video.addEventListener('click', () => {
+            if (video.paused) {
+                video.nextElementSibling.getElementsByClassName('play-icon')[0].style.display = 'none';
+                video.controls = true;
             }
         });
     }

@@ -1997,6 +1997,27 @@
   transition: color .3s;
 }
 
+.main-content .videos .video-slider .swiper-slide .video-title,
+.main-content .videos .video-slider .swiper-slide .video-duration {
+  position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  font: 700 1.032rem 'Montserrat', sans-serif;
+  color: #edebf0;
+  text-transform: uppercase;
+}
+
+.main-content .videos .video-slider .swiper-slide .video-title {
+  bottom: -24px;
+  left: 0;
+}
+
+.main-content .videos .video-slider .swiper-slide .video-duration {
+  bottom: -24px;
+  right: 0;
+}
+
 .main-content .videos .video-slider .swiper-slide:hover .play-button .icon {
   color: #ffe26d;
 }
@@ -2004,6 +2025,85 @@
 .main-content .videos .video-slider .swiper-pagination {
   position: absolute;
   bottom: -60px;
+}
+
+.main-content .team .layout-centered {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding-top: 77px;
+  padding-bottom: 138px;
+}
+
+.main-content .team .layout-centered .section-title {
+  margin-bottom: 45px;
+}
+
+.main-content .team .layout-centered .team-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  width: 100%;
+}
+
+.main-content .team .layout-centered .team-list .teammate {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: calc(33.3%);
+  margin-bottom: 65px;
+}
+
+.main-content .team .layout-centered .team-list .teammate .card {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 172px;
+  text-align: center;
+}
+
+.main-content .team .layout-centered .team-list .teammate .card .avatar-container {
+  margin-bottom: 30px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.main-content .team .layout-centered .team-list .teammate .card .avatar-container .image {
+  width: 100%;
+}
+
+.main-content .team .layout-centered .team-list .teammate .card .name {
+  margin-bottom: 18px;
+  font: 700 1.474rem 'Montserrat', sans-serif;
+  text-transform: uppercase;
+  color: #040405;
+}
+
+.main-content .team .layout-centered .team-list .teammate .card .position {
+  font: 700 1.474rem 'Montserrat', sans-serif;
+  text-transform: capitalize;
+  color: #9d9d9d;
+}
+
+.main-content .team .layout-centered .team-list .teammate:nth-child(3),
+.main-content .team .layout-centered .team-list .teammate:nth-child(6) {
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+.main-content .team .layout-centered .team-list .teammate:nth-child(2),
+.main-content .team .layout-centered .team-list .teammate:nth-child(5) {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 @media only screen and (max-width: 1000px) {
@@ -2146,6 +2246,10 @@
   .main-content .about .layout-centered .section-title,
   .main-content .about .layout-centered .description {
     text-align: center;
+  }
+  .main-content .videos .video-slider .swiper-slide .video-title,
+  .main-content .videos .video-slider .swiper-slide .video-duration {
+    display: none;
   }
 }
 
