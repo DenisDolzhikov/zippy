@@ -524,6 +524,7 @@
         .video-slider {
             display: flex;
             position: relative;
+            width: 100%;
 
             .swiper-slide {
                 display: flex;
@@ -534,6 +535,8 @@
                     display: flex;
                     width: 100%;
                     height: auto;
+                    cursor: pointer;
+                    object-fit: cover;
                 }
 
                 .play-button {
@@ -548,8 +551,29 @@
                     background: none;
                     outline: none;
                     border: none;
+                    
+                    .play-icon,
+                    .stop-icon {
+                        font-size: 15rem;
+                        color: #fefefe;
+                        transition: color .3s;
+                    }
+
+                    .stop-icon {
+                        display: none;
+                        color: #ffe26d;
+                        opacity: 0;
+                    }
+
                 }
             }
+
+            .swiper-slide:hover .play-button .icon {
+                color: #ffe26d;
+                opacity: 1;
+            }
+
+            .swiper-slider:hover 
 
             .swiper-pagination {
                 position: absolute;

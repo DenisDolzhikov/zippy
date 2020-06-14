@@ -30,6 +30,7 @@ let projectsSlider = new Swiper('.projects-slider', {
 
     pagination: {
         el: '.projects-slider .swiper-pagination',
+        clickable: true,
     },
     debugger: true,
 
@@ -52,6 +53,7 @@ let pricingSlider = new Swiper('.price-slider', {
 
     pagination: {
         el: '.price-slider .swiper-pagination',
+        clickable: true,
     },
     debugger: true,
 });
@@ -65,6 +67,7 @@ let videoSlider = new Swiper('.video-slider', {
 
     pagination: {
         el: '.video-slider .swiper-pagination',
+        clickable: true,
     },
     debugger: true,
 });
@@ -166,3 +169,20 @@ let videoSlider = new Swiper('.video-slider', {
 
 // video
 
+{
+    let video = document.querySelectorAll('.videos .video');
+
+    for (let item of video) {
+        item.addEventListener('click', () => {
+            if (item.paused) {
+                item.play();
+                item.nextElementSibling.getElementsByClassName('play-icon')[0].style.display = 'none';
+                item.nextElementSibling.getElementsByClassName('stop-icon')[0].style.display = 'block';
+            } else {
+                item.pause();
+                item.nextElementSibling.getElementsByClassName('play-icon')[0].style.display = 'flex';
+                item.nextElementSibling.getElementsByClassName('stop-icon')[0].style.display = 'none';
+            }
+        });
+    }
+}
