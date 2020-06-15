@@ -2029,7 +2029,7 @@
 
 .main-content .team {
   padding-top: 77px;
-  padding-bottom: 138px;
+  padding-bottom: 98px;
 }
 
 .main-content .team .layout-centered {
@@ -2040,7 +2040,7 @@
 }
 
 .main-content .team .layout-centered .section-title {
-  margin-bottom: 45px;
+  margin-bottom: 85px;
 }
 
 .main-content .team .layout-centered .team-list {
@@ -2203,6 +2203,113 @@
 
 .main-content .team .layout-centered .team-slider {
   display: none;
+}
+
+.main-content .our-photo {
+  width: 100%;
+}
+
+.main-content .our-photo .layout-centered .photo-slider {
+  width: 100%;
+}
+
+.main-content .our-photo .layout-centered .photo-slider .swiper-container {
+  width: 100%;
+  height: 300px;
+}
+
+.main-content .our-photo .layout-centered .photo-slider .gallery-top {
+  height: 430px;
+  width: 100%;
+}
+
+.main-content .our-photo .layout-centered .photo-slider .gallery-top .swiper-slide:nth-child(1) {
+  background: url("../img/our-photo1-1920w.jpg") center/cover;
+}
+
+.main-content .our-photo .layout-centered .photo-slider .gallery-top .swiper-slide:nth-child(2) {
+  background: url("../img/our-photo2-1920w.jpg") center/cover;
+}
+
+.main-content .our-photo .layout-centered .photo-slider .gallery-top .swiper-slide:nth-child(3) {
+  background: url("../img/our-photo3-1920w.jpg") center/cover;
+}
+
+.main-content .our-photo .layout-centered .photo-slider .gallery-top .swiper-slide:nth-child(4) {
+  background: url("../img/our-photo4-1920w.jpg") center/cover;
+}
+
+.main-content .our-photo .layout-centered .photo-slider .gallery-top .swiper-slide:nth-child(5) {
+  background: url("../img/our-photo5-1920w.jpg") center/cover;
+}
+
+.main-content .our-photo .layout-centered .photo-slider .gallery-top .swiper-slide:nth-child(6) {
+  background: url("../img/our-photo6-1920w.jpg") center/cover;
+}
+
+.main-content .our-photo .layout-centered .photo-slider .gallery-top .swiper-slide:nth-child(7) {
+  background: url("../img/our-photo7-1920w.jpg") center/cover;
+}
+
+.main-content .our-photo .layout-centered .photo-slider .gallery-top .swiper-slide:nth-child(8) {
+  background: url("../img/our-photo8-1920w.jpg") center/cover;
+}
+
+.main-content .our-photo .layout-centered .photo-slider .gallery-top .swiper-button-next,
+.main-content .our-photo .layout-centered .photo-slider .gallery-top .swiper-button-prev {
+  color: #ffe26d;
+  -webkit-transition: color .3s;
+  transition: color .3s;
+}
+
+.main-content .our-photo .layout-centered .photo-slider .gallery-top .swiper-button-next:hover,
+.main-content .our-photo .layout-centered .photo-slider .gallery-top .swiper-button-prev:hover {
+  color: #62497c;
+}
+
+.main-content .our-photo .layout-centered .photo-slider .gallery-thumbs {
+  height: 68px;
+  padding: 10px 0;
+}
+
+.main-content .our-photo .layout-centered .photo-slider .gallery-thumbs .swiper-slide {
+  opacity: 0.6;
+}
+
+.main-content .our-photo .layout-centered .photo-slider .gallery-thumbs .swiper-slide-thumb-active {
+  opacity: 1;
+}
+
+.main-content .our-photo .layout-centered .photo-slider .gallery-thumbs .swiper-slide:nth-child(1) {
+  background: url("../img/our-photo1-1920w.jpg") center/cover;
+}
+
+.main-content .our-photo .layout-centered .photo-slider .gallery-thumbs .swiper-slide:nth-child(2) {
+  background: url("../img/our-photo2-1920w.jpg") center/cover;
+}
+
+.main-content .our-photo .layout-centered .photo-slider .gallery-thumbs .swiper-slide:nth-child(3) {
+  background: url("../img/our-photo3-1920w.jpg") center/cover;
+}
+
+.main-content .our-photo .layout-centered .photo-slider .gallery-thumbs .swiper-slide:nth-child(4) {
+  background: url("../img/our-photo4-1920w.jpg") center/cover;
+}
+
+.main-content .our-photo .layout-centered .photo-slider .gallery-thumbs .swiper-slide:nth-child(5) {
+  background: url("../img/our-photo5-1920w.jpg") center/cover;
+}
+
+.main-content .our-photo .layout-centered .photo-slider .gallery-thumbs .swiper-slide:nth-child(6) {
+  background: url("../img/our-photo6-1920w.jpg") center/cover;
+}
+
+.main-content .our-photo .layout-centered .photo-slider .gallery-thumbs .swiper-slide:nth-child(7) {
+  background: url("../img/our-photo7-1920w.jpg") center/cover;
+}
+
+.main-content .our-photo .layout-centered .photo-slider .gallery-thumbs .swiper-slide:nth-child(8) {
+  background: url("../img/our-photo8-1920w.jpg") center/cover;
 }
 
 @media only screen and (max-width: 1000px) {
@@ -2608,6 +2715,9 @@
   .main-content .team .layout-centered .team-slider .swiper-pagination {
     position: absolute;
     bottom: -60px;
+  }
+  .main-content .our-photo .layout-centered {
+    width: auto;
   }
 }
 

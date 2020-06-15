@@ -589,13 +589,13 @@
 
     .team {
         padding-top: 77px;
-        padding-bottom: 138px;
+        padding-bottom: 98px;
 
         .layout-centered {
             flex-direction: column;
 
             .section-title {
-                margin-bottom: 45px;
+                margin-bottom: 85px;
             }
 
             .team-list {
@@ -729,6 +729,115 @@
 
             .team-slider {
                 display: none;
+            }
+        }
+    }
+
+    .our-photo {
+        width: 100%;
+
+        .layout-centered {
+
+            .photo-slider {
+                width: 100%;
+
+                .swiper-container {
+                    width: 100%;
+                    height: 300px;
+                }
+                
+                .gallery-top {
+                    height: 430px;
+                    width: 100%;
+
+                    .swiper-slide:nth-child(1) {
+                        background: url("../img/our-photo1-1920w.jpg") center/cover;
+                    }
+
+                    .swiper-slide:nth-child(2) {
+                        background: url("../img/our-photo2-1920w.jpg") center/cover;
+                    }
+
+                    .swiper-slide:nth-child(3) {
+                        background: url("../img/our-photo3-1920w.jpg") center/cover;
+                    }
+
+                    .swiper-slide:nth-child(4) {
+                        background: url("../img/our-photo4-1920w.jpg") center/cover;
+                    }
+
+                    .swiper-slide:nth-child(5) {
+                        background: url("../img/our-photo5-1920w.jpg") center/cover;
+                    }
+
+                    .swiper-slide:nth-child(6) {
+                        background: url("../img/our-photo6-1920w.jpg") center/cover;
+                    }
+
+                    .swiper-slide:nth-child(7) {
+                        background: url("../img/our-photo7-1920w.jpg") center/cover;
+                    }
+
+                    .swiper-slide:nth-child(8) {
+                        background: url("../img/our-photo8-1920w.jpg") center/cover;
+                    }
+
+                    .swiper-button-next,
+                    .swiper-button-prev {
+
+                        &:hover {
+                            color: #62497c;
+                        }
+
+                        color: #ffe26d;
+                        transition: color .3s;
+                    }
+                }
+
+                .gallery-thumbs {
+                    height: 68px;
+                    padding: 10px 0;
+
+                    .swiper-slide {
+                        opacity: 0.6;
+                    }
+
+                    .swiper-slide-thumb-active {
+                        opacity: 1;
+                    }
+
+                    .swiper-slide:nth-child(1) {
+                        background: url("../img/our-photo1-1920w.jpg") center/cover;
+                    }
+
+                    .swiper-slide:nth-child(2) {
+                        background: url("../img/our-photo2-1920w.jpg") center/cover;
+                    }
+
+                    .swiper-slide:nth-child(3) {
+                        background: url("../img/our-photo3-1920w.jpg") center/cover;
+                    }
+
+                    .swiper-slide:nth-child(4) {
+                        background: url("../img/our-photo4-1920w.jpg") center/cover;
+                    }
+
+                    .swiper-slide:nth-child(5) {
+                        background: url("../img/our-photo5-1920w.jpg") center/cover;
+                    }
+
+                    .swiper-slide:nth-child(6) {
+                        background: url("../img/our-photo6-1920w.jpg") center/cover;
+                    }
+
+                    .swiper-slide:nth-child(7) {
+                        background: url("../img/our-photo7-1920w.jpg") center/cover;
+                    }
+
+                    .swiper-slide:nth-child(8) {
+                        background: url("../img/our-photo8-1920w.jpg") center/cover;
+                    }
+                }
             }
         }
     }
@@ -1192,6 +1301,12 @@
                         bottom: -60px;
                     }
                 }
+            }
+        }
+
+        .our-photo {
+            .layout-centered {
+                width: auto;
             }
         }
     }

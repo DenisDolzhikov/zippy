@@ -96,8 +96,36 @@ let teamSlider = new Swiper('.team-slider', {
             slidesPerView: 2,
             slidesPerGroup: 2,
         }
+    },
+});
+
+let photoGalleryThumbs = new Swiper('.gallery-thumbs', {
+    spaceBetween: 10,
+    slidesPerView: 3,
+    freeMode: true,
+    watchSlidesVisibility: true,
+    watchSlidesProgress: true,
+
+    breakpoints: {
+        600: {
+            slidesPerView: 5,
+        },
+        530: {
+            slidesPerView: 4,
+        }
     }
-})
+});
+
+let galleryTop = new Swiper('.photo-slider .gallery-top', {
+    spaceBetween: 10,
+      navigation: {
+        nextEl: '.photo-slider .swiper-button-next',
+        prevEl: '.photo-slider .swiper-button-prev',
+      },
+      thumbs: {
+        swiper: photoGalleryThumbs
+      }
+});
 
 
 /* Sticky top navigation */
