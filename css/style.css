@@ -2067,6 +2067,12 @@
           flex-direction: column;
   width: 172px;
   text-align: center;
+  cursor: pointer;
+}
+
+.main-content .team .layout-centered .team-list .teammate .card:hover .avatar-container > .image {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
 }
 
 .main-content .team .layout-centered .team-list .teammate .card .avatar-container {
@@ -2076,7 +2082,15 @@
 }
 
 .main-content .team .layout-centered .team-list .teammate .card .avatar-container .image {
+  height: auto;
   width: 100%;
+  -webkit-transition: 1s;
+  transition: 1s;
+}
+
+.main-content .team .layout-centered .team-list .teammate .card .avatar-container:hover .image {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
 }
 
 .main-content .team .layout-centered .team-list .teammate .card .name {

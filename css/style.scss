@@ -612,6 +612,11 @@
                         flex-direction: column;
                         width: 172px;
                         text-align: center;
+                        cursor: pointer;
+
+                        &:hover .avatar-container > .image {
+                            transform: scale(1.1);
+                        }
 
                         .avatar-container {
                             margin-bottom: 30px;
@@ -619,8 +624,14 @@
                             overflow: hidden;
 
                             .image {
+                                height: auto;
                                 width: 100%;
+                                transition: 1s;
                             }
+                        }
+
+                        .avatar-container:hover .image {
+                            transform: scale(1.1);
                         }
                         
                         .name {
