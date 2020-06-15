@@ -79,6 +79,26 @@ let videoSlider = new Swiper('.video-slider', {
     }
 });
 
+let teamSlider = new Swiper('.team-slider', {
+    slidesPerView: 1,
+    slidesPerGroup: 1,
+    spaceBetween: 0,
+
+    pagination: {
+        el: '.team-slider .swiper-pagination',
+        clickable: true,
+    },
+
+    debugger: true,
+
+    breakpoints: {
+        531: {
+            slidesPerView: 2,
+            slidesPerGroup: 2,
+        }
+    }
+})
+
 
 /* Sticky top navigation */
 
