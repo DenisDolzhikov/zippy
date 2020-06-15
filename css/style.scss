@@ -614,19 +614,85 @@
                         text-align: center;
                         cursor: pointer;
 
-                        &:hover .avatar-container > .image {
-                            transform: scale(1.1);
+                        &:hover {
+                            .image {
+                                transform: scale(1.1);
+                            }
+
+                            .avatar-container {
+                                transition: all .3s ease-in-out;
+
+                                &::after {
+                                    background: rgba(98,73,124, 0.75);
+                                }
+
+                                .image {
+                                    transform: scale(1.1);
+                                }
+
+                                .social-list {
+                                    transform: translateY(-50%) scale(1);
+                                    transition: all .3s ease;
+                                    opacity: 1;
+                                }
+                            }
                         }
 
                         .avatar-container {
+                            position: relative;
                             margin-bottom: 30px;
                             border-radius: 50%;
                             overflow: hidden;
 
+                            &::after {
+                                content: "";
+                                position: absolute;
+                                top: 0;
+                                left: 0;
+                                width: 100%;
+                                height: 100%;
+                                transition: background .3s ease-in-out;
+                                z-index: 2;
+                            }
+
                             .image {
+                                position: relative;
                                 height: auto;
                                 width: 100%;
-                                transition: 1s;
+                                transition: all .3s ease-in-out;
+                                z-index: 1;
+                            }
+
+                            .social-list {
+                                position: absolute;
+                                display: flex;
+                                align-items: flex-start;
+                                top: 50%;
+                                left: 0;
+                                width: 100%;
+                                color: #faefe9;
+                                transition: all .3s ease, opacity 0.2s, transform 0.3s;
+                                transform: scale(1.8);
+                                opacity: 0;
+                                z-index: 3;
+
+                                .item {
+                                    &:hover {
+                                        color: #ffe26d;
+                                    }
+                                    
+                                    margin-right: 29px;
+                                    font-size: 30px;
+                                    transition: color .3s;
+                                }
+
+                                .item:first-child {
+                                    margin-left: auto;
+                                }
+
+                                .item:last-child {
+                                    margin-right: auto;
+                                }
                             }
                         }
 
@@ -728,6 +794,14 @@
                         flex-direction: column;
                         transition: background .3s;
                         cursor: pointer;
+
+                        &:not(.image):hover {
+                            background: #ffe26d;
+                        }
+    
+                        &:hover .img-container > .image {
+                            transform: scale(1.1);
+                        }
     
                         .img-container {
                             width: 100%;
@@ -738,10 +812,6 @@
                                 height: auto;
                                 width: 100%;
                                 transition: 1s;
-    
-                                &:hover {
-                                    transform: scale(1.1);
-                                }
                             }
                         }
     

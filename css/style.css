@@ -2070,22 +2070,100 @@
   cursor: pointer;
 }
 
-.main-content .team .layout-centered .team-list .teammate .card:hover .avatar-container > .image {
+.main-content .team .layout-centered .team-list .teammate .card:hover .image {
   -webkit-transform: scale(1.1);
           transform: scale(1.1);
 }
 
+.main-content .team .layout-centered .team-list .teammate .card:hover .avatar-container {
+  -webkit-transition: all .3s ease-in-out;
+  transition: all .3s ease-in-out;
+}
+
+.main-content .team .layout-centered .team-list .teammate .card:hover .avatar-container::after {
+  background: rgba(98, 73, 124, 0.75);
+}
+
+.main-content .team .layout-centered .team-list .teammate .card:hover .avatar-container .image {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+
+.main-content .team .layout-centered .team-list .teammate .card:hover .avatar-container .social-list {
+  -webkit-transform: translateY(-50%) scale(1);
+          transform: translateY(-50%) scale(1);
+  -webkit-transition: all .3s ease;
+  transition: all .3s ease;
+  opacity: 1;
+}
+
 .main-content .team .layout-centered .team-list .teammate .card .avatar-container {
+  position: relative;
   margin-bottom: 30px;
   border-radius: 50%;
   overflow: hidden;
 }
 
+.main-content .team .layout-centered .team-list .teammate .card .avatar-container::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -webkit-transition: background .3s ease-in-out;
+  transition: background .3s ease-in-out;
+  z-index: 2;
+}
+
 .main-content .team .layout-centered .team-list .teammate .card .avatar-container .image {
+  position: relative;
   height: auto;
   width: 100%;
-  -webkit-transition: 1s;
-  transition: 1s;
+  -webkit-transition: all .3s ease-in-out;
+  transition: all .3s ease-in-out;
+  z-index: 1;
+}
+
+.main-content .team .layout-centered .team-list .teammate .card .avatar-container .social-list {
+  position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  color: #faefe9;
+  -webkit-transition: all .3s ease, opacity 0.2s, -webkit-transform 0.3s;
+  transition: all .3s ease, opacity 0.2s, -webkit-transform 0.3s;
+  transition: all .3s ease, opacity 0.2s, transform 0.3s;
+  transition: all .3s ease, opacity 0.2s, transform 0.3s, -webkit-transform 0.3s;
+  -webkit-transform: scale(1.8);
+          transform: scale(1.8);
+  opacity: 0;
+  z-index: 3;
+}
+
+.main-content .team .layout-centered .team-list .teammate .card .avatar-container .social-list .item {
+  margin-right: 29px;
+  font-size: 30px;
+  -webkit-transition: color .3s;
+  transition: color .3s;
+}
+
+.main-content .team .layout-centered .team-list .teammate .card .avatar-container .social-list .item:hover {
+  color: #ffe26d;
+}
+
+.main-content .team .layout-centered .team-list .teammate .card .avatar-container .social-list .item:first-child {
+  margin-left: auto;
+}
+
+.main-content .team .layout-centered .team-list .teammate .card .avatar-container .social-list .item:last-child {
+  margin-right: auto;
 }
 
 .main-content .team .layout-centered .team-list .teammate .card .avatar-container:hover .image {
@@ -2183,6 +2261,13 @@
     transition: background .3s;
     cursor: pointer;
   }
+  .main-content .projects .projects-slider .swiper-slide .item:not(.image):hover {
+    background: #ffe26d;
+  }
+  .main-content .projects .projects-slider .swiper-slide .item:hover .img-container > .image {
+    -webkit-transform: scale(1.1);
+            transform: scale(1.1);
+  }
   .main-content .projects .projects-slider .swiper-slide .item .img-container {
     width: 100%;
     margin-bottom: 46px;
@@ -2193,10 +2278,6 @@
     width: 100%;
     -webkit-transition: 1s;
     transition: 1s;
-  }
-  .main-content .projects .projects-slider .swiper-slide .item .img-container .image:hover {
-    -webkit-transform: scale(1.1);
-            transform: scale(1.1);
   }
   .main-content .projects .projects-slider .swiper-slide .item .title {
     margin-bottom: 18px;
