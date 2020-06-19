@@ -252,3 +252,36 @@ let galleryTop = new Swiper('.photo-slider .gallery-top', {
         });
     }
 }
+
+
+//Parallax in newsletter section
+
+document.querySelectorAll('.img-parallax').forEach(img => {
+    let imgParent = img.parentElement;
+
+    function parallaxImg() {
+        let speed = img.dataset.speed;
+        let imgY = imgParent.getBoundingClientRect().top;
+        let winY = img.scrollTop;
+        let winH = img.offsetHeight;
+        let parentH = imgParent.offsetHeight;
+
+        let winBottom = winY + winH;
+        
+        let imgBottom;
+        let imgTop;
+        let imgPercent;
+
+        if (winBottom > imgY && winY < imgY + parentH) {
+            imgBottom = ((winBottom - imgY) * speed);
+            imgTop = winH + parentH;
+            imgPercent = ((imgBottom / imgTop) * 100) + (50 - (speed * 50));
+        }
+
+        img.style.top = `${imgPercent}%`;
+        img.style.transform = `translate(-50%, -${imgPercent}%)`;
+    }
+
+    document.addEventListener('scroll', parallaxImg);
+    document.addEventListener('DOMContentLoaded', parallaxImg);
+});
