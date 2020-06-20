@@ -240,25 +240,11 @@ let blogSlider = new Swiper('.blog-slider', {
     
 }
 
-// video
+
+// videos
 
 {
     let videos = document.querySelectorAll('.videos .video');
-/*
-    function makeVideoDuration() {
-        let slides = document.querySelectorAll('.video-slider .swiper-slide');
-
-        for (let slide of slides) {
-            let video = slide.querySelector('.video');
-            let videoDuration = slide.querySelector('.video-duration');
-
-            video.addEventListener('loadedmetadata', () => {
-                videoDuration.textContent = video.duration;
-            });
-        }
-    }
-
-    makeVideoDuration(); */
 
     for (let video of videos) {
 
@@ -303,3 +289,22 @@ document.querySelectorAll('.img-parallax').forEach(img => {
     document.addEventListener('scroll', parallaxImg);
     document.addEventListener('DOMContentLoaded', parallaxImg);
 });
+
+
+//google maps 
+
+function initMap() {
+    let parisRussia = { lat: 53.303136, lng: 60.114432 };
+
+    let map = new google.maps.Map(document.getElementById('google-map'), {
+        center: parisRussia,
+        zoom: 9,
+        mapTypeId: 'roadmap',
+        disableDefaultUI: true
+    });
+
+    let marker = new google.maps.Marker({
+        position: parisRussia, 
+        map: map
+    });
+}
