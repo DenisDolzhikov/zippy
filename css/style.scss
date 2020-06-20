@@ -856,11 +856,13 @@ body {
     }
 
     .newsletter {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
         position: relative;
         overflow: hidden;
         padding-top: 60px;
         padding-bottom: 145px;
-        //background: url("../img/newsletter-bg-1950w.jpg") center 0/100% no-repeat;
 
         .img-parallax {
             width: 100vmax;
@@ -869,57 +871,142 @@ body {
             top: 0;
             left: 50%;
             transform: translate(-50%,0);
-            pointer-events: none
+            pointer-events: none;
         }
+
+        .section-title {
+            margin-bottom: 40px;
+            font: 700 4.421rem 'Montserrat', sans-serif;
+            color: #ffffff;
+        }
+
+        .newsletter-form {
+            display: flex;
+            width: 39%;
+
+            .text-input {
+                flex-grow: 1;
+                padding: 18px;
+                font: 400 1.916rem 'Montserrat', sans-serif;
+                color: #9d9d9d;
+                border: none;
+                border-radius: 5px 0 0 5px;
+            }
+
+            .text-input::placeholder {
+                color: #dbdbdb;
+            }
+
+            .button-submit {
+                padding: 23px 40px;
+                background: #ffe26d;
+                font: 700 1.032rem 'Montserrat', sans-serif;
+                color: #323232;
+                text-transform: uppercase;
+                border: none;
+                border-radius: 0 5px 5px 0;
+                transition: .3s;
+
+                &:hover {
+                    background: #62497c;
+                    color: #ffffff;
+                }
+            }
+        }
+        
+    }
+
+    .blog {
+        padding-top: 72px;
+        padding-bottom: 90px;
 
         .layout-centered {
             flex-direction: column;
-            align-items: center;
 
             .section-title {
-                margin-bottom: 40px;
-                font: 700 4.421rem 'Montserrat', sans-serif;
-                color: #ffffff;
+                margin-bottom: 60px;
             }
 
-            .newsletter-form {
+            .blog-list {
                 display: flex;
-                width: 77.12%;
+                justify-content: space-between;
 
-                .text-input {
-                    flex-grow: 1;
-                    padding: 18px;
-                    font: 400 1.916rem 'Montserrat', sans-serif;
-                    color: #9d9d9d;
-                    border: none;
-                    border-radius: 5px 0 0 5px;
-                }
+                .item {
+                    width: 29.24%;
 
-                .text-input::placeholder {
-                    color: #dbdbdb;
-                }
+                    .card {
+                        display: flex;
+                        flex-direction: column;
+                        text-align: center;
 
-                .button-submit {
-                    padding: 23px 40px;
-                    background: #ffe26d;
-                    font: 700 1.032rem 'Montserrat', sans-serif;
-                    color: #323232;
-                    text-transform: uppercase;
-                    border: none;
-                    border-radius: 0 5px 5px 0;
-                    transition: .3s;
+                        &:hover {
+                            .image {
+                                transform: scale(1.2) rotate(5deg);
+                            }
+                        }
 
-                    &:hover {
-                        background: #62497c;
-                        color: #ffffff;
+                        .image-container {
+                            position: relative;
+                            height: 111px;
+                            margin-bottom: 37px;
+                            overflow: hidden;
+
+                            .image {
+                                position: absolute;
+                                top: 0;
+                                left: 0;
+                                width: 100%;
+                                height: auto;
+                                transition: .5s ease-in-out;
+                            }
+                        }
+
+                        .title {
+                            margin-bottom: 25px;
+                            font: 700 1.474rem 'Montserrat', sans-serif;
+                            text-transform: uppercase;
+                            color: #040405;
+                        }
+
+                        .date {
+                            margin-bottom: 27px;
+                            font: 400 1.326rem 'Helvetica';
+                            color: #8b8b8c;
+                        }
+
+                        .description {
+                            margin-bottom: 25px;
+                            font: 400 1.326rem/2.358rem 'Helvetica';
+                            color: #040405;
+                        }
+
+                        .button {
+                            align-self: center;
+                            background: #ececec;
+                            color: #323232;
+
+                            &:hover {
+                                background: #ffe26d;
+                            }
+                        }
                     }
                 }
             }
+
+            .blog-slider {
+                display: none;
+            }
         }
     }
+}
 
-    .free-place {
-        height: 1500px;
+@media only screen and (max-width: 1100px) {
+    .main-content {
+        .newsletter {
+            .newsletter-form {
+                width: 60%;
+            }
+        }
     }
 }
 
@@ -1107,6 +1194,12 @@ body {
                         display: none;
                     }
                 }
+            }
+        }
+
+        .newsletter {
+            .newsletter-form {
+                width: 70%;
             }
         }
     }
@@ -1389,6 +1482,90 @@ body {
                 width: auto;
             }
         }
+
+        .blog {
+            .layout-centered {
+                width: auto;
+
+                .blog-list {
+                    display: none;
+                }
+
+                .blog-slider {
+                    display: flex;
+                    position: relative;
+
+                    .swiper-slide {
+                        display: flex;
+                        justify-content: center;
+                        overflow: hidden;
+
+                        .card {
+                            display: flex;
+                            flex-direction: column;
+                            text-align: center;
+                            width: 207px;
+
+                            &:hover {
+                                .image {
+                                    transform: scale(1.2) rotate(5deg);
+                                }
+                            }
+    
+                            .image-container {
+                                position: relative;
+                                height: 111px;
+                                margin-bottom: 37px;
+                                overflow: hidden;
+    
+                                .image {
+                                    position: absolute;
+                                    top: 0;
+                                    left: 0;
+                                    width: 100%;
+                                    height: auto;
+                                    transition: .5s ease-in-out;
+                                }
+                            }
+    
+                            .title {
+                                margin-bottom: 25px;
+                                font: 700 1.474rem 'Montserrat', sans-serif;
+                                text-transform: uppercase;
+                                color: #040405;
+                            }
+    
+                            .date {
+                                margin-bottom: 27px;
+                                font: 400 1.326rem 'Helvetica';
+                                color: #8b8b8c;
+                            }
+    
+                            .description {
+                                margin-bottom: 25px;
+                                font: 400 1.326rem/2.358rem 'Helvetica';
+                                color: #040405;
+                            }
+    
+                            .button {
+                                align-self: center;
+                                background: #ececec;
+                                color: #323232;
+    
+                                &:hover {
+                                    background: #ffe26d;
+                                }
+                            }
+                        }
+                    }
+
+                    .swiper-pagination {
+                        position: absolute;
+                        bottom: -60px;
+                    }
+                }
+            }
+        }
     }
     
 }
@@ -1494,6 +1671,12 @@ body {
                 }
             }
         }
+
+        .newsletter {
+            .newsletter-form {
+                width: 80%;
+            }
+        }
     }
 }
 
@@ -1517,6 +1700,12 @@ body {
                 }
             }
         }
+
+        .newsletter {
+            .newsletter-form {
+                width: 90%;
+            }
+        }
     }
 }
 
@@ -1532,6 +1721,44 @@ body {
 
                 .swiper-pagination {
                     bottom: -40px;
+                }
+            }
+        }
+
+        .newsletter {
+            .img-parallax {
+                width: auto;
+                height: 100%;
+               
+            }
+
+            .newsletter-form {
+                flex-direction: column;
+
+                .text-input,
+                .button-submit {
+                    border-radius: 0;
+                }
+                
+                .text-input {
+                    text-align: center;
+                }
+            }
+        }
+
+        .blog {
+            .layout-centered {
+                .blog-slider {
+                    .swiper-slide {
+                        
+                        .card {
+                            width: 300px;
+                            
+                            .image-container {
+                                height: 200px;
+                            }
+                        }
+                    }
                 }
             }
         }

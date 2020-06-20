@@ -127,6 +127,24 @@ let galleryTop = new Swiper('.photo-slider .gallery-top', {
       }
 });
 
+let blogSlider = new Swiper('.blog-slider', {
+    slidesPerView: 1,
+    spaceBetween: 0,
+
+    pagination: {
+        el: '.blog-slider .swiper-pagination',
+        clickable: true,
+    },
+
+    debugger: true,
+
+    breakpoints: {
+        531: {
+            slidesPerView: 2,
+        }
+    }
+});
+
 
 /* Sticky top navigation */
 
@@ -184,7 +202,7 @@ let galleryTop = new Swiper('.photo-slider .gallery-top', {
 
     //Swipe for off canvas
     function offCanvasSwiper() {
-        if (window.matchMedia("(min-width: 480px) and (max-width: 1000px)").matches) {
+        if (window.matchMedia("(min-width: 481px) and (max-width: 1000px)").matches) {
 
             $('.page-wrapper').swipe({
                 swipeStatus: function(event, phase, direction, distance, duration, fingerCount, fingerData, currentDirection) {
