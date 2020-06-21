@@ -237,6 +237,9 @@ let blogSlider = new Swiper('.blog-slider', {
 
         offCanvasSwiper();
     });
+
+    //hide off canvas first a second for fix bug transition
+    setTimeout(() => offCanvasWrapper.style.opacity = 1, 1000);
     
 }
 
@@ -254,7 +257,16 @@ let blogSlider = new Swiper('.blog-slider', {
                 video.controls = true;
             }
         });
+
+        video.nextElementSibling.addEventListener('click', () => {
+            if (video.paused) {
+                video.nextElementSibling.getElementsByClassName('play-icon')[0].style.display = 'none';
+                video.controls = true;
+                video.play();
+            }
+        });
     }
+
 }
 
 

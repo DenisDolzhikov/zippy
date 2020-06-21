@@ -1419,7 +1419,6 @@ body {
   transition: transform 0.7s, background 0.4s;
   transition: transform 0.7s, background 0.4s, -webkit-transform 0.7s;
   width: 100%;
-  z-index: 10;
 }
 
 .page .page-wrapper.overlay::after {
@@ -1454,7 +1453,6 @@ body {
 
 .off-canvas {
   overflow: hidden;
-  z-index: 20;
 }
 
 .off-canvas .off-canvas-wrapper {
@@ -1471,7 +1469,7 @@ body {
   transition: transform .7s;
   transition: transform .7s, -webkit-transform .7s;
   background: #1e1f26;
-  z-index: 20;
+  opacity: 0;
 }
 
 .off-canvas .menu {
