@@ -298,11 +298,17 @@ document.querySelectorAll('.img-parallax').forEach(img => {
 ymaps.ready(init);
 
 function init() {
-    let yandexMap = new ymaps.Map('yandex-map', {
-        center: [53.297642, 60.101732],
-        zoom: 14,
-        controls: []
-    });
+    let yandexMap;
+
+    function makeMap() {
+        yandexMap = new ymaps.Map('yandex-map', {
+            center: [53.297642, 60.101732],
+            zoom: 14,
+            controls: []
+        });
+    }
+
+    makeMap();
 
     yandexMap.behaviors.disable('scrollZoom');
 
@@ -321,6 +327,8 @@ function init() {
         }
     }
 }
+
+
 
 /* Google maps
 
