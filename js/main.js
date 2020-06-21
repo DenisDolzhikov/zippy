@@ -291,7 +291,38 @@ document.querySelectorAll('.img-parallax').forEach(img => {
 });
 
 
-//google maps 
+//maps 
+
+//Yandex map
+
+ymaps.ready(init);
+
+function init() {
+    let yandexMap = new ymaps.Map('yandex-map', {
+        center: [53.297642, 60.101732],
+        zoom: 14,
+        controls: []
+    });
+
+    yandexMap.behaviors.disable('scrollZoom');
+
+    let body = document.querySelector('body');
+    body.onkeydown = callbackDown;
+    body.onkeyup = callbackUp;
+    
+    function callbackDown(e){
+        if(e.keyCode === 17){
+            yandexMap.behaviors.enable('scrollZoom');
+        }
+    }
+    function callbackUp(e){
+        if(e.keyCode === 17){
+            yandexMap.behaviors.disable('scrollZoom');
+        }
+    }
+}
+
+/* Google maps
 
 function initMap() {
     let parisRussia = { lat: 53.303136, lng: 60.114432 };
@@ -307,4 +338,4 @@ function initMap() {
         position: parisRussia, 
         map: map
     });
-}
+} */

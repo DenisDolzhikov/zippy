@@ -1140,23 +1140,24 @@
 
                 <section class="contact">
 
-                    <div class="google-map" id="google-map"></div>
+                    <!-- <div class="google-map noSwipe" id="google-map"></div> -->
+                    <div class="yandex-map noSwipe" id="yandex-map"></div>
 
-                    <form action="" class="contact-form">
+                    <form action="#" class="contact-form">
 
                         <h2 class="section-title">Contact</h2>
 
                         <label class="label" for="">name</label>
-                        <input class="input" type="text" id="clientName" required>
+                        <input class="input" type="text" id="clientName" placeholder="your name" required>
 
                         <label class="label" for="">email adress</label>
-                        <input class="input" type="email" id="clientEmail" required>
+                        <input class="input" type="email" id="clientEmail" placeholder="your email" autocomplete  required>
 
                         <label class="label" for="">subject</label>
-                        <input class="input" type="text" id="clientSubject" required>
+                        <input class="input" type="text" id="clientSubject" placeholder="your subject" required>
 
                         <label class="label" for="clientMessage">message</label>
-                        <textarea class="textarea" id="clientMessage"></textarea>
+                        <textarea class="textarea" id="clientMessage" placeholder="your message"></textarea>
 
                         <button class="button" type="submit">send</button>
 
@@ -1193,7 +1194,8 @@
     <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
     <script src="js/jquery.touchSwipe.min.js"></script>
     <script src="https://unpkg.com/swiper/js/swiper.min.js"></script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyATUenLnNhPMLmCk02FV0MS_YAZkwp2_ho&callback=initMap&libraries=&v=weekly" defer></script>
+    <!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyATUenLnNhPMLmCk02FV0MS_YAZkwp2_ho&callback=initMap&libraries=&v=weekly" defer></script> -->
+    <script src="https://api-maps.yandex.ru/2.1/?apikey=9a71a654-a98d-4246-884c-15a44efd8512&lang=ru_RU" type="text/javascript"></script>
     <script src="js/main.js"></script>
 </body>
 </html>
