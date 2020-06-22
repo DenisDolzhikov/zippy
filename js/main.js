@@ -201,6 +201,37 @@ let blogSlider = new Swiper('.blog-slider', {
     toggleMenu();
 
     //Swipe for off canvas
+
+    function offCanvasSwiper() {
+        $('.page-wrapper').swipe({
+            swipeStatus: function(event, phase, direction, distance, duration, fingerCount, fingerData, currentDirection) {
+
+                if (phase == 'end') {
+                    //Swipe in threshold px
+                    if (direction == 'right') {
+                        offCanvasWrapper.classList.add('is-opened');
+                        pageWrapper.classList.add('is-moved');
+                        pageWrapper.classList.add('overlay');
+                    }
+
+                    if (direction == 'left') {
+                        offCanvasWrapper.classList.remove('is-opened');
+                        pageWrapper.classList.remove('is-moved');
+                        pageWrapper.classList.remove('overlay');
+                    }
+                }
+            },
+            triggerOnTouchEnd: false,
+            threshold: 120 // swipe in 30px
+        });  
+    }
+
+    offCanvasSwiper();
+
+    //hide off canvas first a second for fix bug transition
+    setTimeout(() => offCanvasWrapper.style.opacity = 1, 1000);
+
+/*
     function offCanvasSwiper() {
         if (window.matchMedia("(min-width: 481px) and (max-width: 1000px)").matches) {
 
@@ -240,7 +271,7 @@ let blogSlider = new Swiper('.blog-slider', {
 
     //hide off canvas first a second for fix bug transition
     setTimeout(() => offCanvasWrapper.style.opacity = 1, 1000);
-    
+*/
 }
 
 

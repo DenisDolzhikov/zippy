@@ -3420,8 +3420,15 @@ body {
 }
 
 @media only screen and (max-width: 480px) {
-  .off-canvas {
-    display: none;
+  .off-canvas .off-canvas-wrapper {
+    width: 300px;
+    -webkit-transform: translateX(-300px);
+            transform: translateX(-300px);
+    padding: 30px 35px;
+  }
+  .page .page-wrapper.is-moved {
+    -webkit-transform: translateX(300px);
+            transform: translateX(300px);
   }
   .sticky-nav {
     display: none;
@@ -3482,6 +3489,16 @@ body {
 }
 
 @media only screen and (max-width: 320px) {
+  .off-canvas .off-canvas-wrapper {
+    width: 250px;
+    -webkit-transform: translateX(-250px);
+            transform: translateX(-250px);
+    padding: 30px 35px;
+  }
+  .page .page-wrapper.is-moved {
+    -webkit-transform: translateX(250px);
+            transform: translateX(250px);
+  }
   :root {
     font-size: 9px;
   }
