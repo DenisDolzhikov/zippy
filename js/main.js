@@ -455,3 +455,10 @@ function initMap() {
     });
 } */
 
+
+// lazy load for images 
+
+
+const observer = lozad(); 
+observer.observe();
+

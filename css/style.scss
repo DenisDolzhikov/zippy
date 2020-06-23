@@ -241,19 +241,27 @@ body {
         }
 
         .slide1 {
-            background: url('../img/header-slide1-1200w.jpg') 0 0/100% 2058px no-repeat;
+            //background: url('../img/header-slide1-1200w.jpg') 0 0/100% 2058px no-repeat;
+            background-size: 100% 2058px;
+            background-repeat: no-repeat;
         }
     
         .slide2 {
-            background: url('../img/header-slide2-2134w.jpg') 0 0/100% no-repeat;
+            //background: url('../img/header-slide2-2134w.jpg') 0 0/100% no-repeat;
+            background-size: 100%;
+            background-repeat: no-repeat;
         }
     
         .slide3 {
-            background: url('../img/header-slide3-1934w.jpg') 0 0/100% no-repeat;
+            //background: url('../img/header-slide3-1934w.jpg') 0 0/100% no-repeat;
+            background-size: 100%;
+            background-repeat: no-repeat;
         }
     
         .slide4 {
-            background: url('../img/header-slide4-1952w.jpg') 0 0/100% no-repeat;
+            //background: url('../img/header-slide4-1952w.jpg') 0 0/100% no-repeat;
+            background-size: 100%;
+            background-repeat: no-repeat;
         }
 
         .swiper-pagination {
@@ -774,35 +782,39 @@ body {
                     width: 100%;
 
                     .swiper-slide:nth-child(1) {
-                        background: url("../img/our-photo1-1920w.jpg") center/cover;
+                        //background: url("../img/our-photo1-1920w.jpg") center/cover;
+                        background-position: center;
+                        background-size: cover;
                     }
 
                     .swiper-slide:nth-child(2) {
-                        background: url("../img/our-photo2-1920w.jpg") center/cover;
+                        //background: url("../img/our-photo2-1920w.jpg") center/cover;
+                        background-position: center;
+                        background-size: cover;
                     }
 
                     .swiper-slide:nth-child(3) {
-                        background: url("../img/our-photo3-1920w.jpg") center/cover;
+                        //background: url("../img/our-photo3-1920w.jpg") center/cover;
+                        background-position: center;
+                        background-size: cover;
                     }
 
                     .swiper-slide:nth-child(4) {
-                        background: url("../img/our-photo4-1920w.jpg") center/cover;
+                        //background: url("../img/our-photo4-1920w.jpg") center/cover;
+                        background-position: center;
+                        background-size: cover;
                     }
 
                     .swiper-slide:nth-child(5) {
-                        background: url("../img/our-photo5-1920w.jpg") center/cover;
+                        //background: url("../img/our-photo5-1920w.jpg") center/cover;
+                        background-position: center;
+                        background-size: cover;
                     }
 
                     .swiper-slide:nth-child(6) {
-                        background: url("../img/our-photo6-1920w.jpg") center/cover;
-                    }
-
-                    .swiper-slide:nth-child(7) {
-                        background: url("../img/our-photo7-1920w.jpg") center/cover;
-                    }
-
-                    .swiper-slide:nth-child(8) {
-                        background: url("../img/our-photo8-1920w.jpg") center/cover;
+                        //background: url("../img/our-photo6-1920w.jpg") center/cover;
+                        background-position: center;
+                        background-size: cover;
                     }
 
                     .swiper-button-next,
@@ -830,35 +842,51 @@ body {
                     }
 
                     .swiper-slide:nth-child(1) {
-                        background: url("../img/our-photo1-1920w.jpg") center/cover;
+                        //background: url("../img/our-photo1-1920w.jpg") center/cover;
+                        background-position: center;
+                        background-size: cover;
                     }
 
                     .swiper-slide:nth-child(2) {
-                        background: url("../img/our-photo2-1920w.jpg") center/cover;
+                        //background: url("../img/our-photo2-1920w.jpg") center/cover;
+                        background-position: center;
+                        background-size: cover;
                     }
 
                     .swiper-slide:nth-child(3) {
-                        background: url("../img/our-photo3-1920w.jpg") center/cover;
+                        //background: url("../img/our-photo3-1920w.jpg") center/cover;
+                        background-position: center;
+                        background-size: cover;
                     }
 
                     .swiper-slide:nth-child(4) {
-                        background: url("../img/our-photo4-1920w.jpg") center/cover;
+                        //background: url("../img/our-photo4-1920w.jpg") center/cover;
+                        background-position: center;
+                        background-size: cover;
                     }
 
                     .swiper-slide:nth-child(5) {
-                        background: url("../img/our-photo5-1920w.jpg") center/cover;
+                        //background: url("../img/our-photo5-1920w.jpg") center/cover;
+                        background-position: center;
+                        background-size: cover;
                     }
 
                     .swiper-slide:nth-child(6) {
-                        background: url("../img/our-photo6-1920w.jpg") center/cover;
+                        //background: url("../img/our-photo6-1920w.jpg") center/cover;
+                        background-position: center;
+                        background-size: cover;
                     }
 
                     .swiper-slide:nth-child(7) {
-                        background: url("../img/our-photo7-1920w.jpg") center/cover;
+                        //background: url("../img/our-photo7-1920w.jpg") center/cover;
+                        background-position: center;
+                        background-size: cover;
                     }
 
                     .swiper-slide:nth-child(8) {
-                        background: url("../img/our-photo8-1920w.jpg") center/cover;
+                        //background: url("../img/our-photo8-1920w.jpg") center/cover;
+                        background-position: center;
+                        background-size: cover;
                     }
                 }
             }
