@@ -316,6 +316,51 @@
 }
 
 
+// parallax umbrella svg in about section
+{
+    const umbrellaContainer = document.querySelector('.main-content .about');
+    const umbrella = document.querySelector('.main-content .umbrella');
+    const maxMove = umbrellaContainer.offsetWidth / 30;
+    const umbrellaCenterX = umbrella.offsetLeft + (umbrella.offsetWidth / 2);
+    const umbrellaCenterY = umbrella.offsetTop + (umbrella.offsetHeight / 2);
+
+    function getMousePos(xRef, yRef) {
+        let panelRect = umbrellaContainer.getBoundingClientRect();
+        return {
+            x: Math.floor(xRef - panelRect.left) / (panelRect.right - panelRect.left) * umbrellaContainer.offsetWidth,
+            y: Math.floor(yRef - panelRect.top) / (panelRect.bottom - panelRect.top) * umbrellaContainer.offsetHeight
+        }
+    }
+
+    document.body.addEventListener('mousemove', (e) => {
+        let mousePos = getMousePos(e.clientX, e.clientY);
+        let distX = mousePos.x - umbrellaCenterX;
+        let distY = mousePos.y - umbrellaCenterY;
+
+        umbrella.style.transform = "translate("+(-1*distX)/70+"px,"+(-1*distY)/70+"px)";
+    
+    });
+}
+
+
+// parallax in header-slider
+
+{
+    const parallaxHeaderList = document.querySelectorAll('.header .swiper-slide');
+ 
+    window.addEventListener('scroll', () => {
+        let offset = window.pageYOffset;
+        
+        if (window.matchMedia("(min-width: 1000px)").matches) {
+            for (let parallaxItem of parallaxHeaderList) {
+                parallaxItem.style.backgroundPositionY = offset * 0.7 + 'px';
+            }
+        }
+    });
+    
+}
+
+
 //Parallax in newsletter section
 
 {
@@ -350,23 +395,6 @@
     });
 }
 
-
-// parallax in header-slider
-
- {
-    const parallaxHeaderList = document.querySelectorAll('.header .swiper-slide');
-
-    window.addEventListener('scroll', () => {
-        let offset = window.pageYOffset;
-        
-        if (window.matchMedia("(min-width: 1000px)").matches) {
-            for (let parallaxItem of parallaxHeaderList) {
-                parallaxItem.style.backgroundPositionY = offset * 0.7 + 'px';
-            }
-        }
-    });
-    
- }
 
 //maps 
 

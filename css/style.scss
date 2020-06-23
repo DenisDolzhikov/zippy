@@ -276,16 +276,25 @@ body {
 
     .about {
         .layout-centered {
+            position: relative;
             flex-direction: column;
-            //align-items: center;
             padding-top: 90px;
             padding-bottom: 58px;
             border-bottom: 2px solid #e7e7e7;
-            background: url("../img/about-umbrella-icon.svg") 100% 185px/189px no-repeat;
+            //background: url("../img/about-umbrella-icon.svg") 100% 185px/189px no-repeat;
+            z-index: 10;
 
             .section-title {
                 margin-bottom: 84px;
                 width: 100%;
+            }
+
+            .umbrella {
+                position: absolute;
+                top: 185px;
+                right: 0;
+                width: 185px;
+                height: 185px;
             }
 
             > .description {
@@ -1349,11 +1358,16 @@ body {
         .about {
             .layout-centered {
                 background-image: none;
-
+                
                 .section-title,
                 .description {
                     text-align: center;
                 }
+
+                .umbrella {
+                    display: none;
+                }
+                
             }
         }
 

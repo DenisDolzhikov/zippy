@@ -1663,6 +1663,7 @@ body {
 }
 
 .main-content .about .layout-centered {
+  position: relative;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
@@ -1670,12 +1671,20 @@ body {
   padding-top: 90px;
   padding-bottom: 58px;
   border-bottom: 2px solid #e7e7e7;
-  background: url("../img/about-umbrella-icon.svg") 100% 185px/189px no-repeat;
+  z-index: 10;
 }
 
 .main-content .about .layout-centered .section-title {
   margin-bottom: 84px;
   width: 100%;
+}
+
+.main-content .about .layout-centered .umbrella {
+  position: absolute;
+  top: 185px;
+  right: 0;
+  width: 185px;
+  height: 185px;
 }
 
 .main-content .about .layout-centered > .description {
@@ -2849,6 +2858,9 @@ body {
   .main-content .about .layout-centered .section-title,
   .main-content .about .layout-centered .description {
     text-align: center;
+  }
+  .main-content .about .layout-centered .umbrella {
+    display: none;
   }
   .main-content .videos .video-slider .swiper-slide .video-title,
   .main-content .videos .video-slider .swiper-slide .video-duration {
