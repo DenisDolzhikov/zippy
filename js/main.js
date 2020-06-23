@@ -9,7 +9,11 @@
             el: '.header-slider .swiper-pagination',
             clickable: true,
         },
-    
+
+        autoplay: {
+            delay: 5000,
+        },
+        
         debugger: true,
     });
 
