@@ -354,15 +354,18 @@
 // parallax in header-slider
 
  {
-     const parallaxHeaderList = document.querySelectorAll('.header .swiper-slide');
+    const parallaxHeaderList = document.querySelectorAll('.header .swiper-slide');
 
-     window.addEventListener('scroll', () => {
-         let offset = window.pageYOffset;
-         
-         for (let parallaxItem of parallaxHeaderList) {
-            parallaxItem.style.backgroundPositionY = offset * 0.7 + 'px';
-         }
-     })
+    window.addEventListener('scroll', () => {
+        let offset = window.pageYOffset;
+        
+        if (window.matchMedia("(min-width: 1000px)").matches) {
+            for (let parallaxItem of parallaxHeaderList) {
+                parallaxItem.style.backgroundPositionY = offset * 0.7 + 'px';
+            }
+        }
+    });
+    
  }
 
 //maps 
