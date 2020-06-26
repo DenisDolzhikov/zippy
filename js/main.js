@@ -195,13 +195,13 @@
     function toggleMenu() {
         menuOpen.addEventListener('click', () => {
             offCanvasWrapper.classList.add('is-opened');
-            pageWrapper.classList.add('is-moved');
+            //pageWrapper.classList.add('is-moved');
             pageWrapper.classList.add('overlay');
         });
 
         menuClose.addEventListener('click', () => {
             offCanvasWrapper.classList.remove('is-opened');
-            pageWrapper.classList.remove('is-moved');
+            //pageWrapper.classList.remove('is-moved');
             pageWrapper.classList.remove('overlay');
         });
     }
@@ -219,13 +219,13 @@
                         //Swipe in threshold px
                         if (direction == 'right') {
                             offCanvasWrapper.classList.add('is-opened');
-                            pageWrapper.classList.add('is-moved');
+                            //pageWrapper.classList.add('is-moved');
                             pageWrapper.classList.add('overlay');
                         }
 
                         if (direction == 'left') {
                             offCanvasWrapper.classList.remove('is-opened');
-                            pageWrapper.classList.remove('is-moved');
+                            //pageWrapper.classList.remove('is-moved');
                             pageWrapper.classList.remove('overlay');
                         }
                     }
@@ -239,7 +239,9 @@
     offCanvasSwiper();
 
     window.addEventListener('resize', function(event) {
-        if (!window.matchMedia("(max-width: 1000px)").matches) {
+        if (window.matchMedia("(max-width: 1000px)").matches) {
+            offCanvasSwiper();
+        } else {
             $('.page-wrapper').swipe('destroy');
         }
 
@@ -462,7 +464,42 @@ function initMap() {
 
 // lazy load for images 
 
-
 const observer = lozad(); 
 observer.observe();
+
+
+// Smooth scroll for anchor
+
+{
+    function smoothAnchors() {
+        const anchors = document.querySelectorAll('a[href*="#"');
+
+        for (let anchor of anchors) {
+            anchor.addEventListener('click', (e) => {
+                e.preventDefault();
+
+                const blockId = anchor.getAttribute('href').substr(1);
+
+                document.getElementById(blockId).scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start',
+                })
+            })
+        }
+
+    }
+
+    window.addEventListener('load', () => {
+        smoothAnchors();
+    })
+
+    window.addEventListener('resize', () => {
+        smoothAnchors();
+    });
+
+    window.addEventListener('orientationchange', () => {
+        smoothAnchors();
+    })
+
+}
 
