@@ -2168,7 +2168,7 @@ body {
 }
 
 .main-content .team .layout-centered .team-list .teammate .card .avatar-container .social-list .item {
-  margin-right: 29px;
+  margin-right: 12px;
   font-size: 30px;
   -webkit-transition: color .3s;
   transition: color .3s;
@@ -3113,7 +3113,7 @@ body {
     z-index: 3;
   }
   .main-content .team .layout-centered .team-slider .swiper-slide .card .avatar-container .social-list .item {
-    margin-right: 29px;
+    margin-right: 12px;
     font-size: 30px;
     -webkit-transition: color .3s;
     transition: color .3s;

@@ -706,7 +706,7 @@ body {
                                         color: #ffe26d;
                                     }
                                     
-                                    margin-right: 29px;
+                                    margin-right: 12px;
                                     font-size: 30px;
                                     transition: color .3s;
                                 }
@@ -1496,7 +1496,7 @@ body {
                             background: #62497c url("../img/icon1.svg") center/35px 40px no-repeat;
                         }
                         
-                         .card.card2::before {
+                        .card.card2::before {
                             background: #62497c url("../img/icon2.svg") center/35px 40px no-repeat;
                         }
                             .card.card3::before {
@@ -1661,13 +1661,13 @@ body {
                                     z-index: 3;
     
                                     .item {
+                                        margin-right: 12px;
+                                        font-size: 30px;
+                                        transition: color .3s;
+
                                         &:hover {
                                             color: #ffe26d;
                                         }
-                                        
-                                        margin-right: 29px;
-                                        font-size: 30px;
-                                        transition: color .3s;
                                     }
     
                                     .item:first-child {
