@@ -1246,7 +1246,7 @@ body {
     .main-content {
         .newsletter {
             .newsletter-form {
-                width: 30%;
+                width: 50%;
             }
         }
     }
@@ -2028,6 +2028,10 @@ body {
         .newsletter {
             .newsletter-form {
                 width: 90%;
+
+                .text-input {
+                    padding: 15px !important;
+                }
             }
         }
     }
