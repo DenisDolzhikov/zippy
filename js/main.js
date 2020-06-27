@@ -154,9 +154,12 @@
 
 {
     let stickyNav = document.querySelector('.sticky-nav');
+    let menuOpenTablet = document.querySelector('.open-off-canvas-tablet');
 
     if (window.scrollY > 90) {
-        stickyNav.classList.add('offset');
+        stickyNav.classList.add('scroll');
+        menuOpenTablet.classList.add('scroll');
+
     }
     
     function onScroll() {
@@ -168,9 +171,11 @@
             if (y > 90) {
                 stickyNav.classList.add('scroll');
                 stickyNav.style.transition = '0.5s';
+                menuOpenTablet.classList.add('scroll');
             } else {
                 stickyNav.classList.remove('scroll');
                 stickyNav.classList.remove('offset');
+                menuOpenTablet.classList.remove('scroll');
             }
         }
     }
@@ -187,15 +192,15 @@
 
 /* Off-canvas menu */
 {
-    const menuOpen = document.querySelector('.menu-open');
+    const menuOpenTablet = document.querySelector('.open-off-canvas-tablet .hamburger');
     const menuOpenMobile = document.querySelector('.open-off-canvas-mobile');
     const offCanvasWrapper = document.querySelector('.off-canvas-wrapper');
     const pageWrapper = document.querySelector('.page-wrapper');
 
     function toggleMenu() {
-        menuOpen.addEventListener('click', () => {
+        menuOpenTablet.addEventListener('click', () => {
             offCanvasWrapper.classList.toggle('is-opened');
-            menuOpen.classList.toggle('is-active');
+            menuOpenTablet.classList.toggle('is-active');
             pageWrapper.classList.toggle('overlay');
         });
 
@@ -279,7 +284,7 @@
 
 {
     const parallaxHeaderList = document.querySelectorAll('.header .swiper-slide');
- 
+
     window.addEventListener('scroll', () => {
         let offset = window.pageYOffset;
         
