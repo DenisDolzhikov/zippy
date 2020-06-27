@@ -149,6 +149,10 @@ body {
     }
 }
 
+.open-off-canvas-mobile {
+    display: none;
+}
+
 .sticky-nav {
     position: fixed;
     top: 0;
@@ -190,7 +194,7 @@ body {
             }
         }
 
-        .toggle-button {
+        .hamburger {
             display: none;
         }
     }
@@ -1229,8 +1233,9 @@ body {
                 display: none;
             }
 
-            .toggle-button {
+            .hamburger {
                 display: block;
+                position: relative;
                 color: white;
             }
         }
@@ -1820,7 +1825,6 @@ body {
                 }
             }
         }
-               
     }
     
     .footer {
@@ -2040,7 +2044,6 @@ body {
             .img-parallax {
                 width: auto;
                 height: 100%;
-               
             }
 
             .newsletter-form {
@@ -2085,17 +2088,41 @@ body {
         }
     }
 
+    .open-off-canvas-mobile {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: fixed;
+        bottom: 25px;
+        right: 20px;
+        width: 45px;
+        height: 45px;
+        border-radius: 50%;
+        background: rgba(0,0,0,0.6);
+        z-index: 10000;
+
+        $hamburger-layer-color: red;
+
+        .hamburger:focus,
+        .hamburger:active {
+            outline: none !important;
+            border: 0 !important;
+            background: none;
+            -webkit-tap-highlight-color: rgba(0,0,0,0);
+        }
+    }
+
     .page {
         .page-wrapper.is-moved {
             transform: translateX(300px);
         }
     }
 
-   .sticky-nav {
-       display: none;
-   }
+    .sticky-nav {
+        display: none;
+    }
 
-   .header {
+    .header {
         .header-slider {
             .swiper-slide {
                 height: 90vh;
@@ -2103,7 +2130,7 @@ body {
 
                 .layout-centered {
                     flex-direction: column;
- 
+
                     .button {
                         margin-bottom: 0;
                     }
@@ -2113,10 +2140,10 @@ body {
             .swiper-pagination {
                 bottom: 20px;
             }
-       }
-   }
+        }
+    }
 
-   .main-content {
+    .main-content {
         .videos {
             .video-slider {
                 .swiper-slide {
@@ -2138,41 +2165,57 @@ body {
                 padding-right: 15px;
             }
         }
-   }
+    }
 
-   .footer {
-       padding-top: 70px;
+    .footer {
+        padding-top: 70px;
 
-       .layout-centered {
+        .layout-centered {
 
-           .address,
-           .contacts {
-                width: 100%;
-                margin: 0 5% 30px 5%;
-           }
+                .address,
+                .contacts {
+                    margin: 0 5% 30px 5%;
+                    width: 100%;
+                }
 
-           .contacts {
-               margin-bottom: 40px;
-           }
+            .contacts {
+                margin-bottom: 40px;
+            }
 
-           .social-bar {
-               .list {
-                   .item {
-                       font-size: 25px;
-                   }
-               }
-           }
-       }
-   }
+            .social-bar {
+                .list {
+                    .item {
+                        font-size: 25px;
+                    }
+                }
+            }
+        }
+    }
 }
 
 @media only screen and (max-width: 375px) {
     :root {
         font-size: 10px;
     }
+
+    .off-canvas {
+        .off-canvas-wrapper {
+            width: 260px;
+            transform: translateX(-260px);
+            padding: 30px 35px;
+        }
+    }
 }
 
 @media only screen and (max-width: 330px) {
+    .off-canvas {
+        .off-canvas-wrapper {
+            width: 240px;
+            transform: translateX(-240px);
+            padding: 30px 35px;
+        }
+    }
+
     .main-content {
         .blog {
             .layout-centered {
@@ -2192,8 +2235,8 @@ body {
 @media only screen and (max-width: 320px) {
     .off-canvas {
         .off-canvas-wrapper {
-            width: 250px;
-            transform: translateX(-250px);
+            width: 220px;
+            transform: translateX(-220px);
             padding: 30px 35px;
         }
     }

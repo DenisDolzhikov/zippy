@@ -187,66 +187,27 @@
 
 /* Off-canvas menu */
 {
-    const menuOpen = document.querySelector('.sticky-nav .menu-open');
-    const menuClose = document.querySelector('.off-canvas .menu-close');
+    const menuOpen = document.querySelector('.menu-open');
+    const menuOpenMobile = document.querySelector('.open-off-canvas-mobile');
+    const menuClose = document.querySelector('.menu-close');
     const offCanvasWrapper = document.querySelector('.off-canvas-wrapper');
     const pageWrapper = document.querySelector('.page-wrapper');
 
     function toggleMenu() {
         menuOpen.addEventListener('click', () => {
-            offCanvasWrapper.classList.add('is-opened');
-            //pageWrapper.classList.add('is-moved');
-            pageWrapper.classList.add('overlay');
+            offCanvasWrapper.classList.toggle('is-opened');
+            menuOpen.classList.toggle('is-active');
+            pageWrapper.classList.toggle('overlay');
         });
 
-        menuClose.addEventListener('click', () => {
-            offCanvasWrapper.classList.remove('is-opened');
-            //pageWrapper.classList.remove('is-moved');
-            pageWrapper.classList.remove('overlay');
+        menuOpenMobile.addEventListener('click', () => {
+            offCanvasWrapper.classList.toggle('is-opened');
+            menuOpenMobile.getElementsByClassName('menu-open')[0].classList.toggle('is-active');
+            pageWrapper.classList.toggle('overlay');
         });
     }
 
     toggleMenu();
-
-    //Swipe for off canvas
-
-    function offCanvasSwiper() {
-        if (window.matchMedia("(max-width: 1000px)").matches) {
-            $('.page-wrapper').swipe({
-                swipeStatus: function(event, phase, direction, distance, duration, fingerCount, fingerData, currentDirection) {
-
-                    if (phase == 'end') {
-                        //Swipe in threshold px
-                        if (direction == 'right') {
-                            offCanvasWrapper.classList.add('is-opened');
-                            //pageWrapper.classList.add('is-moved');
-                            pageWrapper.classList.add('overlay');
-                        }
-
-                        if (direction == 'left') {
-                            offCanvasWrapper.classList.remove('is-opened');
-                            //pageWrapper.classList.remove('is-moved');
-                            pageWrapper.classList.remove('overlay');
-                        }
-                    }
-                },
-                triggerOnTouchEnd: false,
-                threshold: 120 // swipe in 30px
-            });  
-        }
-    }
-
-    offCanvasSwiper();
-
-    window.addEventListener('resize', function(event) {
-        if (window.matchMedia("(max-width: 1000px)").matches) {
-            offCanvasSwiper();
-        } else {
-            $('.page-wrapper').swipe('destroy');
-        }
-
-        offCanvasSwiper();
-    });
 
     //hide off canvas first a second for fix bug transition
     setTimeout(() => offCanvasWrapper.style.opacity = 1, 1000);
