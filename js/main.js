@@ -189,7 +189,6 @@
 {
     const menuOpen = document.querySelector('.menu-open');
     const menuOpenMobile = document.querySelector('.open-off-canvas-mobile');
-    const menuClose = document.querySelector('.menu-close');
     const offCanvasWrapper = document.querySelector('.off-canvas-wrapper');
     const pageWrapper = document.querySelector('.page-wrapper');
 
@@ -209,50 +208,16 @@
 
     toggleMenu();
 
-    //hide off canvas first a second for fix bug transition
-    setTimeout(() => offCanvasWrapper.style.opacity = 1, 1000);
-
-/*
-    function offCanvasSwiper() {
-        if (window.matchMedia("(min-width: 481px) and (max-width: 1000px)").matches) {
-
-            $('.page-wrapper').swipe({
-                swipeStatus: function(event, phase, direction, distance, duration, fingerCount, fingerData, currentDirection) {
-
-                    if (phase == 'end') {
-                        //Swipe in threshold px
-                        if (direction == 'right') {
-                            offCanvasWrapper.classList.add('is-opened');
-                            pageWrapper.classList.add('is-moved');
-                            pageWrapper.classList.add('overlay');
-                        }
-
-                        if (direction == 'left') {
-                            offCanvasWrapper.classList.remove('is-opened');
-                            pageWrapper.classList.remove('is-moved');
-                            pageWrapper.classList.remove('overlay');
-                        }
-                    }
-                },
-                triggerOnTouchEnd: false,
-                threshold: 120 // swipe in 30px
-            });
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 50)  { 
+            menuOpenMobile.classList.add('skroll');
+        } else {
+            menuOpenMobile.classList.remove('skroll');
         }
-    }
-
-    offCanvasSwiper();
-
-    window.addEventListener('resize', function(event) {
-        if (!window.matchMedia("(min-width: 480px) and (max-width: 1000px)").matches) {
-            $('.page-wrapper').swipe('destroy');
-        }
-
-        offCanvasSwiper();
-    });
+    })
 
     //hide off canvas first a second for fix bug transition
     setTimeout(() => offCanvasWrapper.style.opacity = 1, 1000);
-*/
 
 }
 

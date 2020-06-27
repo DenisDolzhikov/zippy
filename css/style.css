@@ -3471,6 +3471,10 @@ body {
     height: 45px;
     border-radius: 50%;
     background: rgba(0, 0, 0, 0.6);
+    -webkit-transform: scale(0);
+            transform: scale(0);
+    -webkit-transition: .5s;
+    transition: .5s;
     z-index: 10000;
   }
   .open-off-canvas-mobile .hamburger:focus,
@@ -3479,6 +3483,10 @@ body {
     border: 0 !important;
     background: none;
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  }
+  .open-off-canvas-mobile.skroll {
+    -webkit-transform: scale(1);
+            transform: scale(1);
   }
   .page .page-wrapper.is-moved {
     -webkit-transform: translateX(300px);

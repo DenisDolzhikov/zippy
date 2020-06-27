@@ -2099,6 +2099,8 @@ body {
         height: 45px;
         border-radius: 50%;
         background: rgba(0,0,0,0.6);
+        transform: scale(0);
+        transition: .5s;
         z-index: 10000;
 
         $hamburger-layer-color: red;
@@ -2110,6 +2112,10 @@ body {
             background: none;
             -webkit-tap-highlight-color: rgba(0,0,0,0);
         }
+    }
+
+    .open-off-canvas-mobile.skroll {
+        transform: scale(1);
     }
 
     .page {
