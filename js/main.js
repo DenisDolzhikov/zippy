@@ -491,7 +491,7 @@ observer.observe();
 
     window.addEventListener('load', () => {
         smoothAnchors();
-    })
+    });
 
     window.addEventListener('resize', () => {
         smoothAnchors();
@@ -499,7 +499,7 @@ observer.observe();
 
     window.addEventListener('orientationchange', () => {
         smoothAnchors();
-    })
+    });
 
 }
 
