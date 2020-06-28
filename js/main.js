@@ -196,6 +196,7 @@
     const menuOpenMobile = document.querySelector('.open-off-canvas-mobile');
     const offCanvasWrapper = document.querySelector('.off-canvas-wrapper');
     const pageWrapper = document.querySelector('.page-wrapper');
+    const body = document.body;
 
     function toggleMenu() {
         menuOpenTablet.addEventListener('click', () => {
@@ -213,13 +214,39 @@
 
     toggleMenu();
 
+    function emergingMobileButton() {
+
+        window.addEventListener('scroll', () => {
+            let scrollHeight = document.documentElement.scrollHeight;
+            let clientHeight = document.documentElement.clientHeight;
+
+            if (window.scrollY > 50) {
+                menuOpenMobile.classList.add('scroll');
+            } else {
+                menuOpenMobile.classList.remove('scroll');
+            }
+
+            if (window.scrollY >= scrollHeight - clientHeight - 50) {
+                menuOpenMobile.classList.remove('scroll');
+            }
+        });
+    }
+
+    emergingMobileButton();
+
+/*
     window.addEventListener('scroll', () => {
         if (window.scrollY > 50)  { 
             menuOpenMobile.classList.add('skroll');
         } else {
             menuOpenMobile.classList.remove('skroll');
         }
-    })
+
+        if (window.scrollY >= document.body.scrollHeight - 60) {
+            menuOpenMobile.classList.toggle('skroll');
+        } 
+    });
+*/
 
     //hide off canvas first a second for fix bug transition
     setTimeout(() => offCanvasWrapper.style.opacity = 1, 1000);

@@ -1568,8 +1568,9 @@ body {
   z-index: 10000;
 }
 
-.open-off-canvas-mobile {
-  display: none;
+.open-off-canvas-mobile.scroll {
+  -webkit-transform: scale(1);
+          transform: scale(1);
 }
 
 .sticky-nav {
@@ -3518,10 +3519,6 @@ body {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-  }
-  .open-off-canvas-mobile.skroll {
-    -webkit-transform: scale(1);
-            transform: scale(1);
   }
   .page .page-wrapper.is-moved {
     -webkit-transform: translateX(300px);

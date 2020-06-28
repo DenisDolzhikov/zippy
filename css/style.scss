@@ -190,10 +190,10 @@ body {
     transform: scale(0);
     transition: .5s;
     z-index: 10000;
-}
 
-.open-off-canvas-mobile {
-    display: none;
+    &.scroll {
+        transform: scale(1);
+    }
 }
 
 .sticky-nav {
@@ -2146,10 +2146,6 @@ body {
 
     .open-off-canvas-mobile {
         display: flex;
-    }
-
-    .open-off-canvas-mobile.skroll {
-        transform: scale(1);
     }
 
     .page {
