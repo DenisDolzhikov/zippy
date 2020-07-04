@@ -280,7 +280,7 @@
 }
 
 
-// parallax svg umbrella in about section
+// parallax umbrella svg in about section
 {
     const umbrellaContainer = document.querySelector('.main-content .about');
     const umbrella = document.querySelector('.main-content .umbrella');
@@ -332,13 +332,13 @@
         let imgParent = img.parentElement;
 
         function parallaxImg() {
-            let speed = img.dataset.speed;  //Скорость
-            let imgY = imgParent.getBoundingClientRect().top;   //Отступ сверху от родителя img до верха viewport
-            let winY = img.scrollTop;      //Проскроленная невидимая область img
-            let winH = img.offsetHeight;   //Высота img
-            let parentH = imgParent.offsetHeight;    //Высота родителя img
+            let speed = img.dataset.speed;
+            let imgY = imgParent.getBoundingClientRect().top;
+            let winY = img.scrollTop;
+            let winH = img.offsetHeight;
+            let parentH = imgParent.offsetHeight;
 
-            let winBottom = winY + winH;    //Проскроленная невидимая область + высота родителя img 
+            let winBottom = winY + winH;
             
             let imgBottom;
             let imgTop;
