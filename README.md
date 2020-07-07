@@ -1,4 +1,4 @@
-# zippy
-Second portfolio project
+Project #2
 
-Hello, welcome to my second portfolio project.
+Zippy By Denis Dolzhikov:
+https://denisdolzhikov.github.io/zippy/
