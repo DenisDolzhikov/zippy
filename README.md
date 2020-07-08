@@ -1,4 +1,4 @@
-Project #2
+# Zippy
 
-Zippy By Denis Dolzhikov:
+Zippy landing page by Denis Dolzhikov:
 https://denisdolzhikov.github.io/zippy/
