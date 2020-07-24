@@ -2307,28 +2307,28 @@ $spinkit-spinner-color: #62497c !default;
     height: 100%;  
     background-color: #ffffff;
     z-index: 15000;
-  
+
     .sk-double-bounce {
         width: $spinkit-size;
         height: $spinkit-size;
         position: relative;
         margin: auto;
 
-    .sk-child {
-        width: 100%;
-        height: 100%;
-        border-radius: 50%;
-        background-color: $spinkit-spinner-color;
-        opacity: 0.6;
-        position: absolute;
-        top: 0;
-        left: 0;
-        animation: sk-double-bounce 2.0s infinite ease-in-out;
-    }
+        .sk-child {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            background-color: $spinkit-spinner-color;
+            opacity: 0.6;
+            position: absolute;
+            top: 0;
+            left: 0;
+            animation: sk-double-bounce 2.0s infinite ease-in-out;
+        }
 
-    .sk-double-bounce-2 {
-        animation-delay: -1.0s;
-    }
+        .sk-double-bounce-2 {
+            animation-delay: -1.0s;
+        }
 }
 
     @keyframes sk-double-bounce {
@@ -2341,7 +2341,7 @@ $spinkit-spinner-color: #62497c !default;
     }
 }
 
-.loaded {
+body.loaded {
     .preloader {
         display: none;
     }
