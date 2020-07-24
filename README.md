@@ -1,4 +1,6 @@
-# zippy
-Second portfolio project
+# Zippy
 
-Hello, welcome to my second portfolio project.
+Portfolio project #2
+
+Zippy landing page by Denis Dolzhikov:
+https://denisdolzhikov.github.io/zippy/
